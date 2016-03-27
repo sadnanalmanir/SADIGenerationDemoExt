@@ -17,6 +17,8 @@ var RegisterServicePath = "registerservice";
 var Registry = "registry";
 var Register = "register";
 var Services = "services";
+var RemoveServices = "removeall";
+var NumberOfRegisteredServices = "numsofervices";
 
 
 var loadedDomainOntology = "";
@@ -33,6 +35,8 @@ var serviceInputURI = "";
 var serviceOutputURI = "";
 var serviceDescription = "";
 var serviceEmail = "";
+
+
 
 
 
@@ -67,6 +71,7 @@ var loadDomainOntology = function (domOntURI, handler) {
         }
     });
 };
+
 var loadServiceOntology = function (servOntURI, handler) {
     $.ajax({
         type: "POST",
@@ -95,6 +100,28 @@ var displayServiceAlternative = function (handler) {
     $.ajax({
         type: "POST",
         url: service(Registry + slash(Services)),
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            handler(data);
+        }
+    });
+};
+
+var getNumberOfRegisteredServices = function (handler) {
+    $.ajax({
+        type: "POST",
+        url: service(Registry + slash(NumberOfRegisteredServices)),
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            handler(data);
+        }
+    });
+};
+
+var removeAllRegisteredServices = function (handler) {
+    $.ajax({
+        type: "POST",
+        url: service(Registry + slash(RemoveServices)),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             handler(data);
@@ -300,6 +327,7 @@ $(document).ready(function () {
     var registerServiceBtnClicked = false;
     // holds the name of the service selected from the dropdown menu
     var serviceSelectedName;
+    var registeredServiceCounter = 0;
 
     /*
      * Generate Service Code tab.
@@ -308,7 +336,7 @@ $(document).ready(function () {
     // hide the display code button
     $('#displaySourceCodeBtn').hide();
     // hide the button for opening registry
-    $('#go2ServiceRegistryBtn').hide();
+    $('#removeServicesBtn').hide();
 
     // hide the click to download botton
     //$('#registerServiceBtn').hide();
@@ -322,7 +350,6 @@ $(document).ready(function () {
     $("#webXMLConfTextareaID").hide();
     $("#indexJSPCodeTextareaID").hide();
     $("#pomXMLConfTextareaID").hide();
-
 
 
 
@@ -636,7 +663,7 @@ $(document).ready(function () {
         // set the first (index 0) tab containing service class source code as ACTIVE
 
         $('a[href=#serviceClassTab]').tab('show');
-        //$("#sourceCodeDisplayTabsID").tabs({ active: 0 });
+        //$("#sourceCodeDisplayTabsID").tabs({ active: 0 });go2ServiceRegistryBtn
 
         // display all the text areas for holding the code
         $("#serviceClassCodeTextareaID").show();
@@ -691,7 +718,7 @@ $(document).ready(function () {
         //$("#deployedServiceNameTxtFieldID").val('');
 
         if (registerServiceBtnClicked === true) {
-            $('#go2ServiceRegistryBtn').hide();
+            $('#removeServicesBtn').hide();
 
             // Send the service parameters to initialize the code generator first, retrieved from the form
 
@@ -707,7 +734,7 @@ $(document).ready(function () {
 
                     // show the display code button
                     //$('#displaySourceCodeBtn').show();
-                    $('#go2ServiceRegistryBtn').show();
+                    $('#removeServicesBtn').show();
 
 
 
@@ -746,6 +773,39 @@ $(document).ready(function () {
 
     });
 
+    /**
+     * Check if there is any services to removing all registered services.
+     */
+
+
+
+
+    $('#removeServicesBtn').click(function () {
+
+        /**
+         *  Return the number of registered services.Hide the remove button if no services are found registered.
+         */
+        getNumberOfRegisteredServices(function (numOfRegisteredServices) {
+            if ((numOfRegisteredServices >= 0)) {
+                console.log("Number of registered services : " + numOfRegisteredServices);
+                registeredServiceCounter = numOfRegisteredServices;
+                //$('#removeServicesBtn').show();
+                removeAllRegisteredServices(function (removalSuccessMsg){
+                    console.log("Response of Service Removal from the registry : "+ removalSuccessMsg)
+                    $('#registeredServicesWindowID').html("");
+                    $('#deployedServiceNameTxtFieldID').val('')
+                    registerServiceBtnClicked = false;
+                    $('#removeServicesBtn').hide();
+                });
+
+            } else {
+                alert("Error: No services found to be removed from the registry.");
+            }
+
+        });
+
+
+    });
 
 
 

@@ -1,6 +1,7 @@
 package org.ruleml.psoa.restful.resources;
 
 import org.apache.log4j.Logger;
+import org.apache.maven.plugin.MojoExecutionException;
 import org.ruleml.psoa.restful.models.URILoadRequest;
 import org.sadiframework.beans.ServiceBean;
 import org.sadiframework.client.Service;
@@ -180,15 +181,15 @@ public class SADIServiceRegistration {
                             "        <td class=\"col-sm-4\"><b>Description</b></td>\n" +
                             "        <td class=\"col-sm-8\">" + service.getDescription() + "</td>\n" +
                             "      </tr>\n" +
-                            "      <tr class=\"success\">\n" +
+                            "      <tr class=\"info\">\n" +
                             "        <td class=\"col-sm-4\"><b>Service URL</b></td>\n" +
                             "        <td class=\"col-sm-8\"><a href=\">" + service.getURI() + "\">" + service.getURI() + "</a>" + "</td>\n" +
                             "      </tr>\n" +
-                            "      <tr class=\"danger\">\n" +
+                            "      <tr class=\"warning\">\n" +
                             "        <td class=\"col-sm-4\"><b>Input Class</b></td>\n" +
                             "        <td class=\"col-sm-8\"><a href=\">" + service.getInputClassURI() + "\">" + service.getInputClassURI() + "</a>" + "</td>\n" +
                             "      </tr>\n" +
-                            "      <tr class=\"info\">\n" +
+                            "      <tr class=\"danger\">\n" +
                             "        <td class=\"col-sm-4\"><b>Output Class</b></td>\n" +
                             "        <td class=\"col-sm-8\"><a href=\">" + service.getOutputClassURI() + "\">" + service.getOutputClassURI() + "</a>" + "</td>\n" +
                             "      </tr>\n" +
@@ -227,6 +228,43 @@ public class SADIServiceRegistration {
         return SADIServiceDescriptions;
     }
 
+    @Path("/removeall")
+    @POST
+    //@Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Encoded
+    public String numberOfRegisteredServices() throws MojoExecutionException {
+
+            new RegistryFileLoader();
+
+        return "services removed from the registry";
+    }
+
+
+    @Path("/numsofervices")
+    @POST
+    //@Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Encoded
+    public int removeSADIServicesFromRegistry() throws MojoExecutionException {
+
+        Registry registry = null;
+        int serviceCounter = 0;
+        try {
+            registry = Registry.getRegistry();
+            Collection<ServiceBean> services = registry.getRegisteredServices();
+            serviceCounter = services.size();
+        } catch (Exception e) {
+            logger.error(String.format("error retrieving registered services: %s", e));
+            //request.setAttribute("error", e.getMessage());
+        } finally {
+            if (registry != null)
+                registry.getModel().close();
+        }
+
+        return serviceCounter;
+    }
+
     private static String decode(String s) {
         return URLDecoder.decode(s.replace("&gt;", ">"));
         /*String result = s;
@@ -237,7 +275,6 @@ public class SADIServiceRegistration {
         }
         return result;*/
     }
-
 
 
 
