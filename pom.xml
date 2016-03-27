@@ -7,6 +7,36 @@
     <version>1.0-SNAPSHOT</version>
     <name>extendedvaletsadidemo Maven Webapp</name>
     <url>http://maven.apache.org</url>
+    <repositories>
+        <repository>
+            <id>CushionJE</id>
+            <url>file://${project.basedir}/lib/CushionJE.jar</url>
+        </repository>
+        <repository>
+            <id>JSAP-2.0a</id>
+            <url>file://${project.basedir}/lib/JSAP-2.0a.jar</url>
+        </repository>
+        <repository>
+            <id>LogicWarehouseJE</id>
+            <url>file://${project.basedir}/lib/LogicWarehouseJE.jar</url>
+        </repository>
+        <repository>
+            <id>derby</id>
+            <url>file://${project.basedir}/lib/derby.jar</url>
+        </repository>
+        <repository>
+            <id>mysql-connector-java-5.0.8-bin</id>
+            <url>file://${project.basedir}/lib/mysql-connector-java-5.0.8-bin.jar</url>
+        </repository>
+        <repository>
+            <id>owlapi-bin</id>
+            <url>file://${project.basedir}/lib/owlapi-bin.jar</url>
+        </repository>
+        <repository>
+            <id>virt-jena-2.6.2-srdc</id>
+            <url>file://${project.basedir}/lib/virt-jena-2.6.2-srdc.jar</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.sadiframework</groupId>
