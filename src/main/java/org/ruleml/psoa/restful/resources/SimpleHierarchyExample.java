@@ -56,7 +56,7 @@ package org.ruleml.psoa.restful.resources;
         import org.semanticweb.owlapi.reasoner.OWLReasoner;
         import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 
-        import uk.ac.manchester.owl.owlapi.tutorial.LabelExtractor;
+        //import uk.ac.manchester.owl.owlapi.tutorial.LabelExtractor;
 
 /**
  * Simple example. Read an ontology, and display the class hierarchy. May use a
@@ -85,11 +85,12 @@ public class SimpleHierarchyExample {
      * assuming this class is at the given level. Makes no attempt to deal
      * sensibly with multiple inheritance.
      */
+
+/*
     private void printHierarchy(OWLClass clazz) throws OWLException {
         OWLReasoner reasoner = reasonerFactory
                 .createNonBufferingReasoner(ontology);
         printHierarchy(reasoner, clazz, 0);
-        /* Now print out any unsatisfiable classes */
         for (OWLClass cl : ontology.getClassesInSignature()) {
             if (!reasoner.isSatisfiable(cl)) {
                 out.println("XXX: " + labelFor(cl));
@@ -97,42 +98,39 @@ public class SimpleHierarchyExample {
         }
         reasoner.dispose();
     }
-
+*/
+    /*
     private String labelFor(OWLClass clazz) {
-        /*
-         * Use a visitor to extract label annotations
-         */
+
         LabelExtractor le = new LabelExtractor();
         Set<OWLAnnotation> annotations = clazz.getAnnotations(ontology);
         for (OWLAnnotation anno : annotations) {
             anno.accept(le);
         }
-        /* Print out the label if there is one. If not, just use the class URI */
+
         if (le.getResult() != null) {
             return le.getResult().toString();
         } else {
             return clazz.getIRI().toString();
         }
     }
+*/
 
     /**
      * Print the class hierarchy from this class down, assuming this class is at
      * the given level. Makes no attempt to deal sensibly with multiple
      * inheritance.
      */
+    /*
     private void
     printHierarchy(OWLReasoner reasoner, OWLClass clazz, int level)
             throws OWLException {
-        /*
-         * Only print satisfiable classes -- otherwise we end up with bottom
-         * everywhere
-         */
+
         if (reasoner.isSatisfiable(clazz)) {
             for (int i = 0; i < level * INDENT; i++) {
                 out.print(" ");
             }
             out.println(labelFor(clazz));
-            /* Find the children and recurse */
             for (OWLClass child : reasoner.getSubClasses(clazz, true)
                     .getFlattened()) {
                 if (!child.equals(clazz)) {
@@ -141,7 +139,8 @@ public class SimpleHierarchyExample {
             }
         }
     }
-
+*/
+    /*
     public static void main(String[] args) throws OWLException,
             InstantiationException, IllegalAccessException,
             ClassNotFoundException {
@@ -179,4 +178,5 @@ public class SimpleHierarchyExample {
         // Print the hierarchy below thing
         simpleHierarchy.printHierarchy(clazz);
     }
+    */
 }

@@ -19,7 +19,7 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 
-import uk.ac.manchester.owl.owlapi.tutorial.LabelExtractor;
+//import uk.ac.manchester.owl.owlapi.tutorial.LabelExtractor;
 
 /**
  * Created by sadnana on 26/02/16.
@@ -196,12 +196,12 @@ public class DomainOntologyLoader {
      * assuming this class is at the given level. Makes no attempt to deal
      * sensibly with multiple inheritance.
      */
+    /*
     private String printHierarchy(OWLClass clazz, OWLReasonerFactory reasonerFactory, OWLOntology ontology, PrintStream out) throws OWLException {
         String result = null;
         OWLReasoner reasoner = reasonerFactory
                 .createNonBufferingReasoner(ontology);
         printHierarchy(reasoner, clazz, 0, ontology, System.out);
-        /* Now print out any unsatisfiable classes */
         for (OWLClass cl : ontology.getClassesInSignature()) {
             if (!reasoner.isSatisfiable(cl)) {
                 out.println("XXX: " + labelFor(cl, ontology));
@@ -211,37 +211,32 @@ public class DomainOntologyLoader {
         reasoner.dispose();
         return result;
     }
-
+    */
+/*
     private String labelFor(OWLClass clazz, OWLOntology ontology) {
-        /*
-         * Use a visitor to extract label annotations
-         */
         LabelExtractor le = new LabelExtractor();
         Set<OWLAnnotation> annotations = clazz.getAnnotations(ontology);
         for (OWLAnnotation anno : annotations) {
             anno.accept(le);
         }
-        /* Print out the label if there is one. If not, just use the class URI */
         if (le.getResult() != null) {
             return le.getResult().toString();
         } else {
             return clazz.getIRI().toString();
         }
     }
-
+*/
     /**
      * Print the class hierarchy from this class down, assuming this class is at
      * the given level. Makes no attempt to deal sensibly with multiple
      * inheritance.
      */
+  /*
     private String
     printHierarchy(OWLReasoner reasoner, OWLClass clazz, int level, OWLOntology ontology, PrintStream out)
             throws OWLException {
         String result = null;
-        /*
-         * Only print satisfiable classes -- otherwise we end up with bottom
-         * everywhere,
-         */
+
         if (reasoner.isSatisfiable(clazz)) {
             for (int i = 0; i < level * INDENT; i++) {
                 out.print(" ");
@@ -249,7 +244,6 @@ public class DomainOntologyLoader {
             }
             out.println(labelFor(clazz, ontology));
             result += "\n" + labelFor(clazz, ontology);
-            /* Find the children and recurse */
             for (OWLClass child : reasoner.getSubClasses(clazz, true)
                     .getFlattened()) {
                 if (!child.equals(clazz)) {
@@ -259,6 +253,7 @@ public class DomainOntologyLoader {
         }
         return result;
     }
+    */
     @SuppressWarnings("deprecation")
     private static String decode(String s) {
         return URLDecoder.decode(s.replace("&gt;", ">"));
