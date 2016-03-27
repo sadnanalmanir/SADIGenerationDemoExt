@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY HAI "http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#" >
+    <!ENTITY haitoh-sadi-service-ontology "http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#"
+     xml:base="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:haitoh-sadi-service-ontology="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:HAI="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#">
+    <owl:Ontology rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl">
+        <owl:imports rdf:resource="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl"/>
+        <owl:versionIRI rdf:resource="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <owl:ObjectProperty rdf:about="&rdf;type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getDiagnosisCodeByDiagnosisID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getDiagnosisCodeByDiagnosisID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Diagnosis"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getDiagnosisCodeByDiagnosisID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getDiagnosisCodeByDiagnosisID_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_diagnosis_code"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getDiagnosisIDByPatientID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getDiagnosisIDByPatientID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getDiagnosisIDByPatientID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getDiagnosisIDByPatientID_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_diagnosis"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&rdf;type"/>
+                        <owl:hasValue rdf:resource="&HAI;Diagnosis"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientFirstnameLastname_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientFirstnameLastname_Input">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientFirstnameLastname_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientFirstnameLastname_Output">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_facility_reference"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&rdf;type"/>
+                                        <owl:hasValue rdf:resource="&HAI;Facility"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&HAI;has_facility_description"/>
+                                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&rdf;type"/>
+                        <owl:hasValue rdf:resource="&HAI;Patient"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientIDFirstnameLastname_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientIDFirstnameLastname_Input">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&rdf;type"/>
+                        <owl:hasValue rdf:resource="&HAI;Patient"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientIDFirstnameLastname_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientIDFirstnameLastname_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_facility_reference"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&rdf;type"/>
+                                <owl:hasValue rdf:resource="&HAI;Facility"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&HAI;has_facility_description"/>
+                                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getFacilityDescriptionByPatientID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getFacilityDescriptionByPatientID_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_facility_reference"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&rdf;type"/>
+                                <owl:hasValue rdf:resource="&HAI;Facility"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&HAI;has_facility_description"/>
+                                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientFirstLastnameByID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientFirstLastnameByID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientFirstLastnameByID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientFirstLastnameByID_Output">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientFirstnameByPatientID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientFirstnameByPatientID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientFirstnameByPatientID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientFirstnameByPatientID_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientIDByFirstnameLastname_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientIDByFirstnameLastname_Input">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientIDByFirstnameLastname_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientIDByFirstnameLastname_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientIDByLastname_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientIDByLastname_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientLastnameByIDFirstname_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientLastnameByIDFirstname_Input">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&rdf;type"/>
+                        <owl:hasValue rdf:resource="&HAI;Patient"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&HAI;has_first_name"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientLastnameByIDFirstname_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientLastnameByIDFirstname_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientLastnameByPatientID_Input -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientLastnameByPatientID_Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;type"/>
+                <owl:hasValue rdf:resource="&HAI;Patient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl#getPatientLastnameByPatientID_Output -->
+
+    <owl:Class rdf:about="&haitoh-sadi-service-ontology;getPatientLastnameByPatientID_Output">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&HAI;has_last_name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Facility -->
+
+    <owl:NamedIndividual rdf:about="&HAI;Facility"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Patient -->
+
+    <owl:NamedIndividual rdf:about="&HAI;Patient"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

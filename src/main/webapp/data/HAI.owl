@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#"
+     xml:base="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#abstractRecordForPatient -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#abstractRecordForPatient"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#diagnosis_encountered -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#diagnosis_encountered"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#encounters_patient -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#encounters_patient"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_abstract_record -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_abstract_record"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_allergic_reaction_on -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_allergic_reaction_on">
+        <owl:inverseOf rdf:resource="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_allergic_to"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_encounter_reference -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_encounter_reference"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_reference -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_reference"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_allergic_to -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_allergic_to"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_performed_for -->
+
+    <owl:ObjectProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_performed_for">
+        <owl:inverseOf rdf:resource="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_adverse_reaction -->
+
+    <owl:DatatypeProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_adverse_reaction">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis_code -->
+
+    <owl:DatatypeProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis_code">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_description -->
+
+    <owl:DatatypeProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_description">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_first_name -->
+
+    <owl:DatatypeProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_first_name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_last_name -->
+
+    <owl:DatatypeProperty rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_last_name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Abstract -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Abstract"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Allergy -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Allergy"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Diagnosis -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Diagnosis"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Encounter -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Encounter"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Facility -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Facility"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Ingredient -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Ingredient"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Patient -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Patient">
+        <rdfs:subClassOf rdf:resource="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Person"/>
+    </owl:Class>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Person -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Person"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Procedure -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Procedure"/>
+
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Service -->
+
+    <owl:Class rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Service"/>
+
+
+        <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Patient"/>
+
+    <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Procedure"/>
+
+    <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Person"/>
+
+    <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Service"/>
+
+    <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Ingredient"/>
+
+    <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Facility"/>
+
+        <owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Encounter"/>
+	<owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Diagnosis"/>
+	<owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Allergy"/>
+	<owl:NamedIndividual rdf:about="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Abstract"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

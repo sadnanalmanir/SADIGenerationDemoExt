@@ -1,0 +1,14 @@
+Open the database.properties file in /src/main/resources directory
+-remove # to enable database access
+-replace url, user and password
+
+For example,
+haiku.database.url=jdbc:mysql://localhost:3306/my_university
+haiku.database.user=mu_user
+haiku.database.password=mu_password
+
+-once the service is deployed, test with the curl command
+#curl --data @[INPUT RDF FILE] [SERVICE URL]
+
+For example,
+#curl --data @coursename_input.rdf http://localhost:8080/sadi-service-skeleton/getStudentNameByCourse

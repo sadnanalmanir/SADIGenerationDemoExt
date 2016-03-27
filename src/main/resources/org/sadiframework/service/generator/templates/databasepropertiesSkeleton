@@ -1,0 +1,10 @@
+
+# set the parameters (enable by removing hash sign)
+#haiku.database.url=jdbc:oracle:thin:@132.216.183.68:1521:orclhaik
+#haiku.database.user=toh
+#haiku.database.password=toh245
+
+# for preliminary testing of the database hosted at machine
+haiku.database.url=jdbc:mysql://localhost:3306/toh
+haiku.database.user=mu_user
+haiku.database.password=mu_password

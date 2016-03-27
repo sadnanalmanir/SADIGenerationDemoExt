@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<Parameters>
+
+  <!-- Parameters for VampirePrime (vkernel shell). -->
+
+  <ExtensionalPredicates>
+
+
+    <predicate name="db_Nfacility" arity="2"/>
+    <predicate name="db_Npatient" arity="4"/>
+    <predicate name="db_Nallergy" arity="3"/>
+    <predicate name="db_Nencounter" arity="2"/>
+    <predicate name="db_Nservice" arity="5"/>
+    <predicate name="db_NphmIngredient" arity="4"/>
+    <predicate name="db_NhrAbstract" arity="3"/>
+    <predicate name="db_NhrDiagnosis" arity="4"/>
+    <predicate name="db_NhrProcedure" arity="3"/>
+
+    <!--predicate name="db_Npatient_Nencounter_NhrDiagnosis_hdgWID_hdgCd_patWID_patLastName_patFirstName" arity="5"/-->
+
+  </ExtensionalPredicates>
+
+</Parameters>

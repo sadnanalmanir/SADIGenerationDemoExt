@@ -1,0 +1,236 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: Npatient
+%% TABLE PREDICATE: db_Npatient
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: entityForPatient
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: entityForPatientToPatWID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setting up primary key PatWID
+% entityForPatientToPatWID is an inverse function for entityForPatient.
+
+fof(inverse_for_entityForPatient_1,axiom,
+   ! [PatWID] : (entityForPatientToPatWID(entityForPatient(PatWID)) = PatWID)
+).
+
+fof(inverse_for_entityForPatient_2,axiom,
+   ! [P] : (entityForPatient(entityForPatientToPatWID(P)) = P)
+).
+
+% Mapping the attribute Npatient.patWID to entities of the concept HAI:Patient.
+
+fof(table_Npatient_represents_instances_of_concept_Person,axiom,
+  ! [PatWID, PatFacWID, PatLastName,PatFirstName] :
+  (db_Npatient(PatWID, PatFacWID, PatLastName,PatFirstName)
+  =>
+  p_Patient(entityForPatient(PatWID)))
+).
+
+% Setting up foreign key PatFacWID for table Nfacility
+% Mapping the attribute Npatient.PatFacWID to attribute Nfacility.FacWID.
+
+fof(attribute_PatFacWID_assigned_fk_to_table_Nfacility,axiom,
+  ! [PatWID, PatFacWID, PatLastName,PatFirstName] :
+  (db_Npatient(PatWID, PatFacWID, PatLastName,PatFirstName)
+  =>
+  p_has_facility_reference(entityForPatient(PatWID), entityForFacility(PatFacWID)))
+).
+
+% Mapping the attribute Npatient.patFirstName to the property HAI:has_first_name.
+
+fof(attribute_PatFirstName_assigns_has_first_name,axiom,
+  ! [PatWID, PatFacWID, PatLastName,PatFirstName] :
+  (db_Npatient(PatWID, PatFacWID, PatLastName, PatFirstName)
+  =>
+  p_has_first_name(entityForPatient(PatWID),PatFirstName))
+).
+
+% Mapping the attribute Npatient.patLastName to the property HAI:has_last_name.
+
+fof(attribute_PatLastName_assigns_has_last_name,axiom,
+  ! [PatWID, PatFacWID, PatLastName,PatFirstName] :
+  (db_Npatient(PatWID, PatFacWID, PatLastName, PatFirstName)
+  =>
+  p_has_last_name(entityForPatient(PatWID),PatLastName))
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: Nfacility
+%% TABLE PREDICATE: db_Nfacility
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: entityForFacility
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: entityForFacilityToFacWID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setting up primary key FacWID
+% entityForFacilityToFacWID is an inverse function for entityForFacility.
+
+fof(inverse_for_entityForFacility_1,axiom,
+   ! [FacWID] : (entityForFacilityToFacWID(entityForFacility(FacWID)) = FacWID)
+).
+
+fof(inverse_for_entityForFacility_2,axiom,
+   ! [P] : (entityForFacility(entityForFacilityToFacWID(P)) = P)
+).
+
+% Mapping the attribute Nfacility.FacWID to entities of the concept HAI:Facility.
+
+fof(table_Nfacility_represents_instances_of_concept_Facility,axiom,
+  ! [FacWID, FacFacilityDesc] :
+  (db_Nfacility(FacWID, FacFacilityDesc)
+  =>
+  p_Facility(entityForFacility(FacWID)))
+).
+
+% Mapping the attribute Nfacility.FacFacilityDesc to the property HAI:has_facility_description.
+
+fof(attribute_PatLastName_assigns_has_last_name,axiom,
+  ! [FacWID, FacFacilityDesc] :
+  (db_Nfacility(FacWID, FacFacilityDesc)
+  =>
+  p_has_facility_description(entityForFacility(FacWID),FacFacilityDesc))
+).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: Nencounter
+%% TABLE PREDICATE: db_Nencounter
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: entityForEncounter
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: entityForEncounterToEncWID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setting up primary key EncWID
+% entityForEncounterToEncWID is an inverse function for entityForEncounter.
+
+fof(inverse_for_entityForEncounter_1,axiom,
+   ! [EncWID] : (entityForEncounterToEncWID(entityForEncounter(EncWID)) = EncWID)
+).
+
+fof(inverse_for_entityForEncounter_2,axiom,
+   ! [P] : (entityForEncounter(entityForEncounterToEncWID(P)) = P)
+).
+
+% Mapping the attribute Nfacility.FacWID to entities of the concept HAI:Facility.
+
+fof(table_Nencounter_represents_instances_of_concept_Encounter,axiom,
+  ! [EncWID, EncPatWID] :
+  (db_Nencounter(EncWID, EncPatWID)
+  =>
+  p_Encounter(entityForEncounter(EncWID)))
+).
+
+
+% Mapping the attribute Nencounter.EncWID to the property HAI:encountersPatient
+
+fof(table_Nencounter_EncWID_assigned_to_encountersPatient,axiom,
+  ! [EncWID, EncPatWID] :
+  (db_Nencounter(EncWID, EncPatWID)
+  =>
+  p_encountersPatient(entityForEncounter(EncWID), entityForPatient(EncPatWID)))
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: NhrAbstract
+%% TABLE PREDICATE: db_NhrAbstract
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: entityForAbstract
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: entityForAbstractTohraWID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setting up primary key hraWID
+% entityForAbstractTohraWID is an inverse function for entityForAbstract.
+
+fof(inverse_for_entityForAbstract_1,axiom,
+   ! [HraWID] : (entityForAbstractTohraWID(entityForAbstract(HraWID)) = HraWID)
+).
+
+fof(inverse_for_entityForAbstract_2,axiom,
+   ! [P] : (entityForAbstract(entityForAbstractTohraWID(P)) = P)
+).
+
+% Mapping the attribute NhrAbstract.hraWID to entities of the concept HAI:Abstract.
+
+%fof(table_NhrAbstract_represents_instances_of_concept_Abstract,axiom,
+%  ! [HraWID, HraEncWID, HraPatWID] :
+%  (db_NhrAbstract(HraWID, HraEncWID, HraPatWID)
+%  =>
+%  p_Abstract(entityForAbstract(HraWID)))
+%).
+
+% Mapping the attribute NhrAbstract.hraWID to entities of the concept HAI:Abstract.
+
+fof(table_NhrAbstract_represents_instances_of_concept_Abstract,axiom,
+  ! [HraWID, HraEncWID, HraPatWID] :
+  (db_NhrAbstract(HraWID, HraEncWID, HraPatWID)
+  =>
+  p_abstractRecordForPatient(entityForAbstract(HraWID), entityForPatient(HraPatWID)))
+).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: NhrDiagnosis
+%% TABLE PREDICATE: db_NhrDiagnosis
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: entityForDiagnosis
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: entityForDiagnosisTohdgWID
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setting up primary key hdgWID
+% entityForDiagnosisTohdgWID is an inverse function for entityForDiagnosis.
+
+fof(inverse_for_entityForDiagnosis_1,axiom,
+   ! [HdgWID] : (entityForDiagnosisTohdgWID(diagnosisEntity(HdgWID)) = HdgWID)
+).
+
+fof(inverse_for_entityForDiagnosis_2,axiom,
+   ! [P] : (entityForDiagnosis(entityForDiagnosisTohdgWID(P)) = P)
+).
+
+% Mapping the attribute NhrDiagnosis.hdgWID to entities of the concept HAI:Diagnosis.
+
+fof(table_NhrDiagnosis_represents_instances_of_concept_Diagnosis,axiom,
+  ! [HdgWID, HdgHraWID, HdgHraEncWID, HdgCd] :
+  (db_NhrDiagnosis(HdgWID, HdgHraWID, HdgHraEncWID, HdgCd)
+  =>
+  p_Diagnosis(entityForDiagnosis(HdgWID)))
+).
+
+% Mapping the attribute NhrDiagnosis.hdgCd to the property HAI:has_diagnosis_code.
+
+fof(table_NhrDiagnosis_represents_has_diagnosis_code,axiom,
+  ! [HdgWID, HdgHraWID, HdgHraEncWID, HdgCd] :
+  (db_NhrDiagnosis(HdgWID, HdgHraWID, HdgHraEncWID, HdgCd)
+  =>
+  p_has_diagnosis_code(entityForDiagnosis(HdgWID), HdgCd))
+).
+
+% Mapping the attribute NhrDiagnosis.hdgHraEncWID to the property HAI:diagnosisEncountered.
+
+fof(table_NhrDiagnosis_represents_diagnosis_encountered,axiom,
+  ! [HdgWID, HdgHraWID, HdgHraEncWID, HdgCd] :
+  (db_NhrDiagnosis(HdgWID, HdgHraWID, HdgHraEncWID, HdgCd)
+  =>
+  p_diagnosis_encountered(entityForDiagnosis(HdgWID), entityForEncounter(HdgHraEncWID)))
+).
+
+% Mapping the attribute NhrDiagnosis.HdgHraWID to the property HAI:hasAbstractRecord.
+
+fof(table_NhrDiagnosis_represents_has_abstract_record,axiom,
+  ! [HdgWID, HdgHraWID, HdgHraEncWID, HdgCd] :
+  (db_NhrDiagnosis(HdgWID, HdgHraWID, HdgHraEncWID, HdgCd)
+  =>
+  p_has_abstract_record(entityForDiagnosis(HdgWID), entityForAbstract(HdgHraWID)))
+).
+
+fof(arbitrary_rule,axiom,
+  ! [Diag, Pat, Abs] :
+  ( (p_has_abstract_record(Diag, Abs)
+  &
+  p_abstractRecordForPatient(Abs, Pat))
+  =>
+  p_is_performed_for(Diag, Pat)
+)).
+
+%fof(arbitrary_rule,axiom,
+%  ! [Diag, Pat, Abs] :
+%  ( (p_has_abstract_record(Diag, Abs)
+%  &
+%  p_abstractRecordForPatient(Abs, Pat))
+%  =>
+%  p_has_diagnosis(Pat, Dia)
+%)).

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<predicateViews>
+
+ <view predicateName="db_Nfacility" arity="2">
+    <table name="Nfacility">
+      <exportedAttribute>facWID</exportedAttribute>
+      <exportedAttribute>facFacilityDesc</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_Npatient" arity="4">
+    <table name="Npatient">
+      <exportedAttribute>patWID</exportedAttribute>
+      <exportedAttribute>patFacWID</exportedAttribute>
+      <exportedAttribute>patLastName</exportedAttribute>
+      <exportedAttribute>patFirstName</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_Nallergy" arity="3">
+    <table name="Nallergy">
+      <exportedAttribute>algWID</exportedAttribute>
+      <exportedAttribute>algPatWID</exportedAttribute>
+      <exportedAttribute>algAdverseReaction</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_Nencounter" arity="2">
+    <table name="Nencounter">
+      <exportedAttribute>encWID</exportedAttribute>
+      <exportedAttribute>encPatWID</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_Nservice" arity="5">
+    <table name="Nservice">
+      <exportedAttribute>svcWID</exportedAttribute>
+      <exportedAttribute>svcEncWID</exportedAttribute>
+      <exportedAttribute>svcTableCd</exportedAttribute>
+      <exportedAttribute>svcOrderedBy</exportedAttribute>
+      <exportedAttribute>svcPerformedBy</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_NphmIngredient" arity="4">
+    <table name="NphmIngredient">
+      <exportedAttribute>phmiWID</exportedAttribute>
+      <exportedAttribute>phmiSvcWID</exportedAttribute>
+      <exportedAttribute>phmiDesc</exportedAttribute>
+      <exportedAttribute>phmiDoseAmount</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_NhrAbstract" arity="3">
+    <table name="NhrAbstract">
+      <exportedAttribute>hraWID</exportedAttribute>
+      <exportedAttribute>hraEncWID</exportedAttribute>
+      <exportedAttribute>hraPatWID</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_NhrDiagnosis" arity="4">
+    <table name="NhrDiagnosis">
+      <exportedAttribute>hdgWID</exportedAttribute>
+      <exportedAttribute>hdgHraWID</exportedAttribute>
+      <exportedAttribute>hdgHraEncWID</exportedAttribute>
+      <exportedAttribute>HdgCd</exportedAttribute>
+    </table>
+  </view>
+
+  <view predicateName="db_NhrProcedure" arity="3">
+    <table name="NhrProcedure">
+      <exportedAttribute>hprcWID</exportedAttribute>
+      <exportedAttribute>hprcHraWID</exportedAttribute>
+      <exportedAttribute>hprcHraEncWID</exportedAttribute>
+    </table>
+  </view>
+
+
+
+
+  <!--
+       Join the Npaitent and NhrDiagnosis table based on the encounter referenc
+       identifier
+    -->
+ <!--
+  <view predicateName="db_Npatient_Nencounter_NhrDiagnosis_hdgWID_hdgCd_patWID_patLastName_patFirstName" arity="5">
+    <query>
+      <body>
+        SELECT NhrDiagnosis.hdgWID,
+   NhrDiagnosis.hdgCd,
+   Npatient.patWID,
+   Npatient.patLastName,
+   Npatient.patFirstName
+FROM Npatient ,
+     NhrDiagnosis ,
+     Nencounter
+WHERE Npatient.patWID = Nencounter.encPatWID
+  AND NhrDiagnosis.hdgHraEncWID = Nencounter.encWID
+      </body>
+      <exportedAttribute>hdgWID</exportedAttribute>
+      <exportedAttribute>hdgCd</exportedAttribute>
+      <exportedAttribute>patWID</exportedAttribute>
+      <exportedAttribute>patLastName</exportedAttribute>
+      <exportedAttribute>patFirstName</exportedAttribute>
+    </query>
+  </view>
+-->
+
+</predicateViews>

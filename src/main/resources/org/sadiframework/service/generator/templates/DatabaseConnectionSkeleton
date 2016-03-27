@@ -1,0 +1,102 @@
+package $package;
+
+import java.sql.*;
+import java.io.*;
+import java.util.*;
+import org.apache.log4j.Logger;
+
+/** Isolates database connection details. */
+
+class $classname {
+
+    /** Central DB connection used by various services. */
+
+    public static Connection connection = null;
+    private static final Logger log = Logger.getLogger(${classname}.class);
+    private static String JDBCDriverName = "org.gjt.mm.mysql.Driver";
+
+    static
+    {
+
+	try
+	    {
+		Class.forName(JDBCDriverName).newInstance();
+		// Driver loaded.
+	    }
+	catch (Exception ex)
+	    {
+		log.fatal("Cannot load JDBC driver " + JDBCDriverName);
+		throw new RuntimeException("Cannot load JDBC driver " + JDBCDriverName);
+	    };
+
+	// Load connection parameters:
+
+	Properties prop = new Properties();
+
+	MySqlDatabase dummyObject = new MySqlDatabase();
+
+	try
+	    {
+		prop.load(new FileInputStream(new File(dummyObject.getClass().getResource("/database.properties").toURI())));
+	    }
+	catch (Exception ex)
+	    {
+		log.fatal("Cannot read database.properties: " + ex);
+		throw new RuntimeException("Cannot read database.properties: " + ex,ex);
+	    };
+
+
+	String databaseURL =
+	    prop.getProperty("haiku.database.url");
+
+	if (databaseURL == null)
+	    {
+		log.fatal("Cannot read haiku.database.url from database.properties");
+		throw new RuntimeException("Cannot read haiku.database.url from database.properties");
+	    };
+
+	log.info("Trying to connect to the DB " + databaseURL);
+
+	String userName =
+	    prop.getProperty("haiku.database.user");
+
+	if (userName == null)
+	    {
+		log.fatal("Cannot read haiku.database.user from database.properties");
+		throw new RuntimeException("Cannot read haiku.database.user from database.properties");
+	    };
+
+	String password =
+	    prop.getProperty("haiku.database.password");
+
+	if (userName == null)
+	    {
+		log.fatal("Cannot read haiku.database.password from database.properties");
+		throw new RuntimeException("Cannot read haiku.database.password from database.properties");
+	    };
+
+	try
+	    {
+
+		connection =
+		    DriverManager.getConnection(databaseURL.trim(),
+						userName.trim(),
+						password.trim());
+	    }
+
+	catch (Exception ex)
+	    {
+		log.fatal("Cannot connect to the DB " + databaseURL + " : " + ex);
+		throw new RuntimeException("Cannot connect to the DB " + databaseURL + " : " + ex,ex);
+	    };
+
+
+	log.info("Successfully connected to the DB " + databaseURL);
+
+    } // static
+
+
+
+
+
+} // class $classname

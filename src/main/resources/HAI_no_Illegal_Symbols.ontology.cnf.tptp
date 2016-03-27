@@ -1,0 +1,444 @@
+
+
+% Loading parameters from inputs/testsWithCourseOnt/sample_parameters.xml
+% End of parameters file inputs/testsWithCourseOnt/sample_parameters.xml
+
+
+% Processing ontology http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl
+% End of ontology http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl
+%  Common axioms:
+
+
+  fof('owl:Thing U dataDomain cover all model elements',axiom,(
+      ! [X] : 
+        ( p_Thing(X)
+        | dataDomain(X) ) )).
+
+
+
+  fof('There is at least one individual',axiom,(
+      ? [X] : p_Thing(X) )).
+
+
+
+  fof('There is at least one data value',axiom,(
+      ? [X] : dataDomain(X) )).
+
+
+
+  fof('owl:Thing and dataDomain are disjoint',axiom,(
+      ! [X] : ~ ( p_Thing(X)
+        & dataDomain(X) ) )).
+
+
+
+  fof('owl:Nothing is empty',axiom,(
+      ! [X] : ~ p_Nothing(X) )).
+
+
+
+  fof('integer literals are distinct from string-without-language literals',axiom,(
+      ! [X,Y] : intLit(X) != stringLitNoLang(Y) )).
+
+
+
+  fof('integer literals are distinct from string-with-language literals',axiom,(
+      ! [X,Y] : intLit(X) != stringLitWithLang(Y) )).
+
+
+
+  fof('integer literals are distinct from general typed literals',axiom,(
+      ! [X,Y] : intLit(X) != typedLit(Y) )).
+
+
+
+  fof('string-without-language literals are distinct from string-with-language literals',axiom,(
+      ! [X,Y] : stringLitNoLang(X) != stringLitWithLang(Y) )).
+
+
+
+  fof('string-without-language literals are distinct from general typed literals',axiom,(
+      ! [X,Y] : stringLitNoLang(X) != typedLit(Y) )).
+
+
+
+  fof('string-with-language literals are distinct from general typed literals',axiom,(
+      ! [X] : stringLitWithLang(X) != typedLit(Y) )).
+
+
+
+  fof('intLit is a constructor',axiom,(
+      ! [X,Y] : 
+        ( intLit(X) = intLit(Y)
+       => X = Y ) )).
+
+
+
+  fof('stringLitNoLang is a constructor',axiom,(
+      ! [X,Y] : 
+        ( stringLitNoLang(X) = stringLitNoLang(Y)
+       => X = Y ) )).
+
+
+
+  fof('stringLitWithLang is a constructor',axiom,(
+      ! [X,Y] : 
+        ( stringLitWithLang(X) = stringLitWithLang(Y)
+       => X = Y ) )).
+
+
+
+  fof('typedLit is a constructor',axiom,(
+      ! [X,Y] : 
+        ( typedLit(X) = typedLit(Y)
+       => X = Y ) )).
+
+
+
+%  End of common axioms.
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_adverse_reaction must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_adverse_reaction(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_adverse_reaction must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_has_adverse_reaction(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Ingredient is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Ingredient(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_allergic_reaction_on must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_allergic_reaction_on(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_allergic_reaction_on must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_allergic_reaction_on(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_last_name must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_last_name(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_last_name must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_has_last_name(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_diagnosis(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_diagnosis(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Person is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Person(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_performed_for must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_is_performed_for(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_performed_for must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_is_performed_for(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Patient is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Patient(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Diagnosis is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Diagnosis(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis_code must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_diagnosis_code(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_diagnosis_code must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_has_diagnosis_code(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Abstract is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Abstract(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_first_name must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_first_name(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_first_name must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_has_first_name(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Service is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Service(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_abstract_record must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_abstract_record(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_abstract_record must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_abstract_record(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Facility is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Facility(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#diagnosis_encountered must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_diagnosis_encountered(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#diagnosis_encountered must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_diagnosis_encountered(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#abstractRecordForPatient must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_abstractRecordForPatient(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#abstractRecordForPatient must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_abstractRecordForPatient(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Procedure is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Procedure(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_allergic_to must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_is_allergic_to(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#is_allergic_to must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_is_allergic_to(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Allergy is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Allergy(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.w3.org/2001/XMLSchema#string is a datatype',axiom,(
+      ! [X] : 
+        ( p_string(X)
+       => dataDomain(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_description must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_facility_description(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_description must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_has_facility_description(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_encounter_reference must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_encounter_reference(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_encounter_reference must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_encounter_reference(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#Encounter is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Encounter(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_reference must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_facility_reference(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#has_facility_reference must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_has_facility_reference(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#encounters_patient must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_encounters_patient(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl#encounters_patient must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_encounters_patient(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Class axiom #0',axiom,(
+      ! [X] : 
+        ( p_Patient(X)
+       => p_Person(X) ) )).
+
+
+
+  fof('Property axiom #1',axiom,(
+      ! [X,Y] : 
+        ( p_has_allergic_reaction_on(X,Y)
+      <=> p_is_allergic_to(Y,X) ) )).
+
+
+
+  fof('Property axiom #2',axiom,(
+      ! [X,Y] : 
+        ( p_has_facility_description(X,Y)
+       => p_string(Y) ) )).
+
+
+
+  fof('Property axiom #3',axiom,(
+      ! [X,Y] : 
+        ( p_has_first_name(X,Y)
+       => p_string(Y) ) )).
+
+
+
+  fof('Property axiom #4',axiom,(
+      ! [X,Y] : 
+        ( p_has_diagnosis_code(X,Y)
+       => p_string(Y) ) )).
+
+
+
+  fof('Property axiom #5',axiom,(
+      ! [X,Y] : 
+        ( p_has_last_name(X,Y)
+       => p_string(Y) ) )).
+
+
+
+  fof('Property axiom #6',axiom,(
+      ! [X,Y] : 
+        ( p_is_performed_for(X,Y)
+      <=> p_has_diagnosis(Y,X) ) )).
+
+
+
+  fof('Property axiom #7',axiom,(
+      ! [X,Y] : 
+        ( p_has_adverse_reaction(X,Y)
+       => p_string(Y) ) )).
+
+
+
+
