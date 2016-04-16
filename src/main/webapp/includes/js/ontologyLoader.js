@@ -470,7 +470,7 @@ $(document).ready(function () {
 
     // Select a service from the drop-down menu
     $("#serviceDropDownID").on("click", "li a", function () {
-        // get the selected serivce name
+        // get the selected service name
         serviceSelectedName = $(this).text();
 
         // set parameters for the first service when selected, set READ-ONLY
@@ -518,7 +518,7 @@ $(document).ready(function () {
     //  generate the source code
     // event e is used later to make sure that the handler stays on the same tab and prevents default active tab
     $('#generateSourceCodeBtn').click(function (e) {
-
+        e.preventDefault();
         // clear any code which is being displayed now
         //$("#serviceClassCodeTextareaID").val('');
         //$("#mysqlConnCodeTextareaID").val('');
@@ -571,6 +571,8 @@ $(document).ready(function () {
                         console.log("Possibly code generation was unsuccessful.")
                     }
                 });
+
+            $('#tabs li:eq(4) a').tab('show');
         } else {
             alert('Select a service from the menu.');
             // prevent the default behaviour of going to the first tab of the main tabs menu
@@ -584,9 +586,9 @@ $(document).ready(function () {
     /*
      * Display source code in the designated textareas
      */
-    $("#displaySourceCodeBtn").click(function () {
+    $("#displaySourceCodeBtn").click(function (e) {
 
-
+        e.preventDefault();
         // load and display the generated service class code
         loadServiceClassCode(
             function (result) {
@@ -712,7 +714,7 @@ $(document).ready(function () {
     });
 
     $('#registerServiceBtn').click(function (e) {
-
+        e.preventDefault();
         var selectedServiceTxtFieldURI = $('#deployedServiceNameTxtFieldID').val();
         // clear any code which is being displayed now
         //$("#deployedServiceNameTxtFieldID").val('');
@@ -780,8 +782,9 @@ $(document).ready(function () {
 
 
 
-    $('#removeServicesBtn').click(function () {
+    $('#removeServicesBtn').click(function (e) {
 
+        e.preventDefault();
         /**
          *  Return the number of registered services.Hide the remove button if no services are found registered.
          */
