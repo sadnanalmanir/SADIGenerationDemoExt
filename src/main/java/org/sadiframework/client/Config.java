@@ -65,7 +65,11 @@ public class Config extends org.sadiframework.Config
 		 * better way of automatically reading properties files included with
 		 * unknown-at-compile-time Maven artifacts, please change this...
 		 */
+		//Reflections reflections = new Reflections("org.sadiframework.client");
+
+		//org.sadiframework.client.DemoRegistry
 		Reflections reflections = new Reflections("org.sadiframework.client");
+
 		for (Class<? extends Config> c: reflections.getSubTypesOf(Config.class)) {
 			try {
 				String props = (String)c.getField("DEFAULT_PROPERTIES_FILENAME").get(null);

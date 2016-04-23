@@ -35,6 +35,11 @@ public class Application extends javax.ws.rs.core.Application {
         //this.singletons.add(new SADICodeViewer());
         this.singletons.add(new SADIServiceRegistration());
 
+        //this.singletons.add(new FindServicesTest());
+        //this.singletons.add(new SingleQueryTest());
+
+        this.singletons.add(new SHAREQueryOnSADIServices());
+
     }
 
     @Override

@@ -20,6 +20,9 @@ var Services = "services";
 var RemoveServices = "removeall";
 var NumberOfRegisteredServices = "numsofervices";
 
+var SPARQLQueryPath = 'sparqlquery';
+var SharePath = 'share';
+
 
 var loadedDomainOntology = "";
 var loadedServiceOntology = "";
@@ -163,7 +166,7 @@ var registerServiceURI = function (completeRegistryServiceURI, handler) {
             console.log('Message received : ' + successMessage);
             handler(successMessage);
             $('#registrationSuccessMsg').css("display", "block");
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#registrationSuccessMsg').fadeOut('fast');
             }, 1000); // <-- time in milliseconds
             $("#loadingRegisterGIF").css("display", "none");
@@ -171,7 +174,7 @@ var registerServiceURI = function (completeRegistryServiceURI, handler) {
 
             // now display the services
             displayServiceAlternative(function (serviceDescriptionURIs) {
-                console.log("alternative registering services " +    serviceDescriptionURIs);
+                console.log("alternative registering services " + serviceDescriptionURIs);
                 //$('#registeredServicesWindowID').append(serviceDescriptionURIs);
                 $('#registeredServicesWindowID').html("");
                 $('#registeredServicesWindowID').append(serviceDescriptionURIs);
@@ -281,6 +284,26 @@ var loadPomXMLConf = function (handler) {
     });
 };
 
+var executeSPARQLQueryonSHARE = function (sparqlQuery, handler) {
+    $.ajax({
+        type: "POST",
+        url: service(SPARQLQueryPath + slash(SharePath)),
+        data: JSON.stringify(loadSPARQLQueryRequest(sparqlQuery)),
+        contentType: "application/json; charset=utf-8",
+        success: function (resultsOfSPARQLonSHARE) {
+            handler(resultsOfSPARQLonSHARE);
+        }
+    });
+};
+
+var loadSPARQLQueryRequest = function (sparqlQuery) {
+    var sparqlSHAREQuery = (sparqlQuery) ? sparqlQuery : "";
+    return {
+        //iri should be matched
+        query: sparqlSHAREQuery
+    };
+};
+
 
 var loadRequest = function (ontURI) {
     var onturi = (ontURI) ? ontURI : "";
@@ -320,6 +343,7 @@ $(document).ready(function () {
     //iframe.src = iframe.src;
 
 
+
     var mappingRulesLoadClicked = false;
     var domainOntLoadClicked = false;
     var serviceOntLoadClicked = false;
@@ -328,6 +352,11 @@ $(document).ready(function () {
     // holds the name of the service selected from the dropdown menu
     var serviceSelectedName;
     var registeredServiceCounter = 0;
+
+    /** Show sample sparql query on the services when loaded */
+    $("#textareaSPARQLQueryID").val(spqrqlQuery1);
+
+    var SPARQLqueryContent = '';
 
     /*
      * Generate Service Code tab.
@@ -793,8 +822,8 @@ $(document).ready(function () {
                 console.log("Number of registered services : " + numOfRegisteredServices);
                 registeredServiceCounter = numOfRegisteredServices;
                 //$('#removeServicesBtn').show();
-                removeAllRegisteredServices(function (removalSuccessMsg){
-                    console.log("Response of Service Removal from the registry : "+ removalSuccessMsg)
+                removeAllRegisteredServices(function (removalSuccessMsg) {
+                    console.log("Response of Service Removal from the registry : " + removalSuccessMsg)
                     $('#registeredServicesWindowID').html("");
                     $('#deployedServiceNameTxtFieldID').val('')
                     registerServiceBtnClicked = false;
@@ -837,6 +866,48 @@ $(document).ready(function () {
 
 
     });*/
+
+    /*
+     *  Query services using SHARE QUery engines tab
+     */
+    // Clear the input text area
+    $("#resetQueryBtnID").click(function () {
+        $("#textareaSPARQLQueryID").val("");
+    });
+    // Load sample SPARQL Query
+    $("#SampleQueryBtnID").click(function () {
+        $("#textareaSPARQLQueryID").val(spqrqlQuery1);
+    });
+    // Execute SPARQL query
+    $('#submitQueryBtnID').click(function (e) {
+        e.preventDefault();
+
+        SPARQLqueryContent = document.getElementById("textareaSPARQLQueryID").value;
+        console.log('SPARQL Query : ' + SPARQLqueryContent);
+
+        if(SPARQLqueryContent.length === 0){
+            alert('No query to run, load sample query.');
+        }
+        else{
+            executeSPARQLQueryonSHARE(encode(SPARQLqueryContent), function (result) {
+                //loadedServiceOntology = result;
+                console.log('Response from SHARE: '+ result)
+                //$("#serviceOntologyContent").val(loadedServiceOntology);
+                //$("#serviceOntologyContent").show();
+                //$("#tabs")
+                //$("#tabs").tabs('select', 1);
+                //alert('sucks');
+                //$('#myTab a:last').tab('show');
+                // enable the second tab (index starting at 0)
+                //$('#tabs li:eq(2) a').tab('show');
+
+            });
+
+
+
+        }
+
+    });
 
 
 });

@@ -50,28 +50,28 @@
 
 <body>
 
-<div class="container" id="main">
+    <div class="container" id="main">
 
 
 
 
 
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Valet SADI: A Tool for Generating SADI Semantic Web Services Automatically</a>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Valet SADI: A Tool for Generating SADI Semantic Web Services Automatically</a>
+                </div>
+
             </div>
-
-        </div>
-        <!--/.container-fluid -->
-    </nav>
+            <!--/.container-fluid -->
+        </nav>
 
 
 
@@ -82,475 +82,476 @@
 
 
 
-    <div id="allTabs">
-        <div>
-            <div class="tabbable">
-                <ul class="nav nav-tabs" id="tabs">
-                    <li class="active"><a href="#overviewtab" data-toggle="tab">Valet SADI</a></li>
-                    <li><a href="#tohrdbtab" data-toggle="tab">Relational Database</a></li>
-                    <li><a href="#ontologiestab" data-toggle="tab">Ontologies</a></li>
-                    <li><a href="#mappingrulestab" data-toggle="tab">Mapping Rules</a></li>
-                    <li><a href="#generatedsourcetab" data-toggle="tab">Generate Service Code</a></li>
-                    <li><a href="#registerServicestab" data-toggle="tab">Register Services</a></li>
-                </ul>
-                <div class="tab-content">
-                    <br/>
-                    <div class="active tab-pane" id="overviewtab">
+        <div id="allTabs">
+            <div>
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="tabs">
+                        <li class="active"><a href="#overviewtab" data-toggle="tab">Valet SADI</a></li>
+                        <li><a href="#tohrdbtab" data-toggle="tab">Relational Database</a></li>
+                        <li><a href="#ontologiestab" data-toggle="tab">Ontologies</a></li>
+                        <li><a href="#mappingrulestab" data-toggle="tab">Mapping Rules</a></li>
+                        <li><a href="#generatedsourcetab" data-toggle="tab">Generate Service Code</a></li>
+                        <li><a href="#registerServicestab" data-toggle="tab">Register Services</a></li>
+                        <li><a href="#queryServicestab" data-toggle="tab">Query Services</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <br/>
+                        <div class="active tab-pane" id="overviewtab">
 
-                        <div class="row">
-                            <div class="col-sm-12">
-
-
-
+                            <div class="row">
+                                <div class="col-sm-12">
 
 
 
 
-                                <div id="rootwizard">
-                                    <div class="navbar">
-                                        <div class="navbar-inner">
-                                            <div class="container">
-                                                <ul>
-                                                    <li><a href="#overviewStep1tab" data-toggle="tab">What is Valet SADI?</a></li>
-                                                    <li><a href="#overviewStep2tab" data-toggle="tab">Architecture</a></li>
-                                                    <li><a href="#overviewStep3tab" data-toggle="tab">Step 1</a></li>
-                                                    <li><a href="#overviewStep4tab" data-toggle="tab">Step 2</a></li>
-                                                    <li><a href="#overviewStep5tab" data-toggle="tab">Step 3</a></li>
-                                                    <li><a href="#overviewStep6tab" data-toggle="tab">Step 4</a></li>
-                                                    <li><a href="#overviewStep7tab" data-toggle="tab">Step 5</a></li>
-                                                    <li><a href="#overviewStep8tab" data-toggle="tab">Step 6</a></li>
-                                                    <li><a href="#overviewStep9tab" data-toggle="tab">Step 7</a></li>
-                                                </ul>
+
+
+
+                                    <div id="rootwizard">
+                                        <div class="navbar">
+                                            <div class="navbar-inner">
+                                                <div class="container">
+                                                    <ul>
+                                                        <li><a href="#overviewStep1tab" data-toggle="tab">What is Valet SADI?</a></li>
+                                                        <li><a href="#overviewStep2tab" data-toggle="tab">Architecture</a></li>
+                                                        <li><a href="#overviewStep3tab" data-toggle="tab">Step 1</a></li>
+                                                        <li><a href="#overviewStep4tab" data-toggle="tab">Step 2</a></li>
+                                                        <li><a href="#overviewStep5tab" data-toggle="tab">Step 3</a></li>
+                                                        <li><a href="#overviewStep6tab" data-toggle="tab">Step 4</a></li>
+                                                        <li><a href="#overviewStep7tab" data-toggle="tab">Step 5</a></li>
+                                                        <li><a href="#overviewStep8tab" data-toggle="tab">Step 6</a></li>
+                                                        <li><a href="#overviewStep9tab" data-toggle="tab">Step 7</a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane" id="overviewStep1tab">
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-sm-8">
-                                                        <div class="row">
+                                        <div class="tab-content">
+                                            <div class="tab-pane" id="overviewStep1tab">
+                                                <div class="col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-sm-8">
+                                                            <div class="row">
 
-                                                            <div class="panel panel-default">
-                                                                <div class="panel-heading"><b>Overview</b></div>
-                                                                <div class="panel-body">
-                                                                    <h3>A SADI Service Generator for Querying Relational Databases</h3>
-                                                                    <p>
-                                                                        Valet SADI is a framework that automates the generation of
-                                                                        <a href="http://sadiframework.org/content/about-sadi/">SADI Semantic Web services</a> from declarative service descriptions and semantic mappings to relational data. <a href="http://wiki.ruleml.org/index.php/Rule-Based_Data_Access">Mappings</a> are specified in a Datalog sublanguage of <a href="http://wiki.ruleml.org/index.php/PSOA_RuleML">Positional-Slotted Object-Applicative (PSOA) RuleML</a>. This page demonstrates a the proof-of-concept implementation and preliminary evaluation of the approach by generating a set of SADI services over a database representing a fragment of a hospital research data warehouse. These automatically generated fully functional SADI services are indexed in a SADI service registry and can then be invoked to answer simple SPARQL queries by the query engines such as <a href="http://ipsnp.com/hydra/">HYDRA</a> and <a href="http://sadiframework.org/content/tag/share/">SHARE</a>.
-                                                                    </p>
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading"><b>Overview</b></div>
+                                                                    <div class="panel-body">
+                                                                        <h3>A SADI Service Generator for Querying Relational Databases</h3>
+                                                                        <p>
+                                                                            Valet SADI is a framework that automates the generation of
+                                                                            <a href="http://sadiframework.org/content/about-sadi/">SADI Semantic Web services</a> from declarative service descriptions and semantic mappings to relational data. <a href="http://wiki.ruleml.org/index.php/Rule-Based_Data_Access">Mappings</a> are specified in a Datalog sublanguage of <a href="http://wiki.ruleml.org/index.php/PSOA_RuleML">Positional-Slotted Object-Applicative (PSOA) RuleML</a>. This page demonstrates a the proof-of-concept implementation and preliminary evaluation of the approach by generating a set of SADI services over a database representing a fragment of a hospital research data warehouse. These automatically generated fully functional SADI services are indexed in a SADI service registry and can then be invoked to answer simple SPARQL queries by the query engines such as <a href="http://ipsnp.com/hydra/">HYDRA</a> and <a href="http://sadiframework.org/content/tag/share/">SHARE</a>.
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="panel panel-default">
-                                                                <div class="panel-heading"><b>References</b></div>
-                                                                <div class="panel-body">
-                                                                    <!--h3>A SADI Service Generator for Querying Relational Databases</h3-->
-                                                                    <p>
-                                                                        Mohammad Sadnan Al Manir, Alexandre Riazanov, Harold Boley, Artjom Klein, Christopher J. O. Baker: Automated Generation of SADI Web Services for Clinical Intelligence using Ruled-Based Semantic Mappings. SWAT4LS 2015: 203-204.
-                                                                    </p>
-                                                                    <p>
-                                                                        Mohammad Sadnan Al Manir, Alexandre Riazanov, Harold Boley, Christopher J. O. Baker: Generating Semantic Web Services from Declarative Descriptions. CSWS 2013: 33-36.
-                                                                    </p>
-                                                                    <p>
-                                                                        Alexandre Riazanov, Artjom Klein, Arash Shaban-Nejad, Gregory W. Rose, Alan J. Forster, David L. Buckeridge, Christopher J. O. Baker: Semantic querying of relational data for clinical intelligence: a semantic web services-based approach. J. Biomedical Semantics 4: 9 (2013).
-                                                                    </p>
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading"><b>References</b></div>
+                                                                    <div class="panel-body">
+                                                                        <!--h3>A SADI Service Generator for Querying Relational Databases</h3-->
+                                                                        <p>
+                                                                            Mohammad Sadnan Al Manir, Alexandre Riazanov, Harold Boley, Artjom Klein, Christopher J. O. Baker: Automated Generation of SADI Web Services for Clinical Intelligence using Ruled-Based Semantic Mappings. SWAT4LS 2015: 203-204.
+                                                                        </p>
+                                                                        <p>
+                                                                            Mohammad Sadnan Al Manir, Alexandre Riazanov, Harold Boley, Christopher J. O. Baker: Generating Semantic Web Services from Declarative Descriptions. CSWS 2013: 33-36.
+                                                                        </p>
+                                                                        <p>
+                                                                            Alexandre Riazanov, Artjom Klein, Arash Shaban-Nejad, Gregory W. Rose, Alan J. Forster, David L. Buckeridge, Christopher J. O. Baker: Semantic querying of relational data for clinical intelligence: a semantic web services-based approach. J. Biomedical Semantics 4: 9 (2013).
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
+
+
+
                                                             </div>
-
-
+                                                            <!--  row ends -->
 
                                                         </div>
-                                                        <!--  row ends -->
+                                                        <!--  column ends -->
 
+                                                        <div class="col-sm-4">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading"><b>Benefits</b></div>
+                                                                <div class="panel-body">
+                                                                    <!--h2>A SADI Service Generator for Querying RDB</h2-->
+                                                                    <div class="list-group">
+                                                                        <a href="#" class="list-group-item">
+                                                                            <h4 class="list-group-item-heading">Automated Code Generation</h4>
+                                                                            <p class="list-group-item-text">Ready-to-deploy and executable SADI services are generated from the I/O descriptions.</p>
+                                                                        </a>
+                                                                        <a href="#" class="list-group-item">
+                                                                            <h4 class="list-group-item-heading">User friendly</h4>
+                                                                            <p class="list-group-item-text">No need to write Java code for the services, especially by the non-technical users.</p>
+                                                                        </a>
+                                                                        <a href="#" class="list-group-item">
+                                                                            <h4 class="list-group-item-heading">Query Rewriting</h4>
+                                                                            <p class="list-group-item-text">SQL query is generated from the I/O and instantiated from the input RDF data.</p>
+                                                                        </a>
+                                                                        <a href="#" class="list-group-item">
+                                                                            <h4 class="list-group-item-heading">Domain Independent</h4>
+                                                                            <p class="list-group-item-text">Can be used for any domain if suitable mapping can be written between the ontology and the database.</p>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--  column ends -->
+                                                    </div>
+                                                    <!--  row ends -->
+                                                </div>
+
+                                            </div>
+                                            <div class="tab-pane" id="overviewStep2tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Framework Components</b></div>
+                                                            <div class="panel-body">Generating a complete SADI service relies on four(4) separate modules
+                                                                <div class="list-group">
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">Module 1: Semantic Mapping</h4>
+                                                                        <p class="list-group-item-text">Represents the correspondence of a database schema to a domain ontology, which must be written manually.</p>
+                                                                    </a>
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">Module 2: Service Description</h4>
+                                                                        <p class="list-group-item-text">Service inputs and outputs are formalized using the terminologies from the domian ontology.</p>
+                                                                    </a>
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">Module 3: SQL-template Query Generator</h4>
+                                                                        <p class="list-group-item-text">Generates the uninstantiated SQL-template query from I/O descriptions.</p>
+                                                                    </a>
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">Module 4: Service Generator</h4>
+                                                                        <p class="list-group-item-text">Generates executable Java code for a SADI web service with the instantiated SQL query.</p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <!--  column ends -->
 
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-8">
+
                                                         <div class="panel panel-default">
-                                                            <div class="panel-heading"><b>Benefits</b></div>
-                                                            <div class="panel-body">
-                                                                <!--h2>A SADI Service Generator for Querying RDB</h2-->
-                                                                <div class="list-group">
-                                                                    <a href="#" class="list-group-item">
-                                                                        <h4 class="list-group-item-heading">Automated Code Generation</h4>
-                                                                        <p class="list-group-item-text">Ready-to-deploy and executable SADI services are generated from the I/O descriptions.</p>
-                                                                    </a>
-                                                                    <a href="#" class="list-group-item">
-                                                                        <h4 class="list-group-item-heading">User friendly</h4>
-                                                                        <p class="list-group-item-text">No need to write Java code for the services, especially by the non-technical users.</p>
-                                                                    </a>
-                                                                    <a href="#" class="list-group-item">
-                                                                        <h4 class="list-group-item-heading">Query Rewriting</h4>
-                                                                        <p class="list-group-item-text">SQL query is generated from the I/O and instantiated from the input RDF data.</p>
-                                                                    </a>
-                                                                    <a href="#" class="list-group-item">
-                                                                        <h4 class="list-group-item-heading">Domain Independent</h4>
-                                                                        <p class="list-group-item-text">Can be used for any domain if suitable mapping can be written between the ontology and the database.</p>
-                                                                    </a>
-                                                                </div>
+                                                            <div class="panel-heading"><b>Architecture Supporting the Automation of SADI Semantic Web Service Generation</b></div>
+                                                            <div class="panel-body"><img src="images/architecture.png" id="architectureImageID" alt="" class="img-responsive center-block" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!--  column ends -->
                                                 </div>
                                                 <!--  row ends -->
+
+
                                             </div>
+                                            <div class="tab-pane" id="overviewStep3tab">
 
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep2tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Framework Components</b></div>
-                                                        <div class="panel-body">Generating a complete SADI service relies on four(4) separate modules
-                                                            <div class="list-group">
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">Module 1: Semantic Mapping</h4>
-                                                                    <p class="list-group-item-text">Represents the correspondence of a database schema to a domain ontology, which must be written manually.</p>
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">Module 2: Service Description</h4>
-                                                                    <p class="list-group-item-text">Service inputs and outputs are formalized using the terminologies from the domian ontology.</p>
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">Module 3: SQL-template Query Generator</h4>
-                                                                    <p class="list-group-item-text">Generates the uninstantiated SQL-template query from I/O descriptions.</p>
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">Module 4: Service Generator</h4>
-                                                                    <p class="list-group-item-text">Generates executable Java code for a SADI web service with the instantiated SQL query.</p>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Source Data</b></div>
+                                                            <div class="panel-body">
 
-                                                <div class="col-sm-8">
 
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Architecture Supporting the Automation of SADI Semantic Web Service Generation</b></div>
-                                                        <div class="panel-body"><img src="images/architecture.png" id="architectureImageID" alt="" class="img-responsive center-block" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-                                            </div>
-                                            <!--  row ends -->
+                                                                <ul class="list-unstyled">
 
+                                                                    <li>Source Data stored in Relational Database tables</li>
 
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep3tab">
+                                                                    <li>Tables are usually joined by foreign keys</li>
 
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Source Data</b></div>
-                                                        <div class="panel-body">
+                                                                    <li>IT personnel (e.g. a DBA)
 
+                                                                        <ul>
 
-                                                            <ul class="list-unstyled">
+                                                                            <li>Can gather data easily being an expert in SQL query language</li>
 
-                                                                <li>Source Data stored in Relational Database tables</li>
+                                                                        </ul>
 
-                                                                <li>Tables are usually joined by foreign keys</li>
+                                                                    </li>
 
-                                                                <li>IT personnel (e.g. a DBA)
+                                                                    <li>Non-techincal user
 
-                                                                    <ul>
+                                                                        <ul>
 
-                                                                        <li>Can gather data easily being an expert in SQL query language</li>
+                                                                            <li>Not so easy for a non-technical user to retrieve data</li>
 
-                                                                    </ul>
+                                                                            <li>Knows about the domain</li>
 
-                                                                </li>
+                                                                        </ul>
 
-                                                                <li>Non-techincal user
 
-                                                                    <ul>
+                                                                    </li>
 
-                                                                        <li>Not so easy for a non-technical user to retrieve data</li>
 
-                                                                        <li>Knows about the domain</li>
-
-                                                                    </ul>
-
-
-                                                                </li>
-
-
-                                                            </ul>
-
-                                                            <hr>
-
-
-
-                                                            <dl class="dl-horizontal">
-
-                                                                <dt>Npatient</dt>
-
-                                                                <dd>Contains basic information about all patients.</dd>
-
-                                                                <dt>NhrDiagnosis</dt>
-
-                                                                <dd>Contains information about diagnosis.</dd>
-
-                                                                <dt>NhrAbstract</dt>
-
-                                                                <dd>Contains general abstract information. The records from NhrDiagnosis do not directly correspond to the records from Npatient , and access to the table NhrAbstract via foreign keys is required</dd>
-
-                                                            </dl>
-
-
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-
-                                                <div class="col-sm-8">
-
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Relatoinal Dababase Tables</b></div>
-                                                        <div class="panel-body"><img src="images/rdb.png" id="rdbImageID" alt="" class="img-responsive center-block" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-                                            </div>
-                                            <!--  row ends -->
-
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep4tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Separate Ontologies for Domain & Service</b></div>
-                                                        <div class="panel-body">
-
-
-                                                            <ul class="list-unstyled">
-
-                                                                <li>Domain Ontology
-
-                                                                    <ul>
-
-                                                                        <li>Provides a vocabulary for formalizing Semantic Querying of relational data.</li>
-
-                                                                        <li>Focused on a particular domain e.g. Hospital-Acquired Infection (HAI).</li>
-
-                                                                        <li>Domain experts (e.g. infection control practitioners) are familiar with the vocabulary.</li>
-
-                                                                    </ul>
-
-                                                                </li>
-
-                                                                <li>Service Ontology
-
-                                                                    <ul>
-
-                                                                        <li>A separate ontology where the domain expert can define the SADI Service I/O.</li>
-
-                                                                        <li>Uses concepts from the domain ontology and various OWL class constructs.</li>
-
-                                                                        <li>I/O classes define the shape of RDF graph.</li>
-
-                                                                    </ul>
-
-
-                                                                </li>
-
-
-                                                            </ul>
-
-
-
-
-
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-
-                                                <div class="col-sm-8">
-
-
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Domain Ontology and Service Ontology</b></div>
-                                                        <div class="panel-body"><img src="images/ontology.png" id="ontologyImageID" alt="" class="img-responsive center-block" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-                                            </div>
-                                            <!--  row ends -->
-
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep5tab">
-
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Semantic Mapping</b></div>
-                                                        <div class="panel-body">
-
-
-
-                                                            <ul class="list-group">
-
-                                                                <li class="list-group-item">The mapping is required to capture the underlying database design and provide an explicit semantic correspondence, using rules or some other axioms.</li>
-
-                                                                <li class="list-group-item">Relevant parts of the schema are mapped to the domain ontology using PSOA rules</li>
-
-                                                                <li class="list-group-item">Manually written perhaps by the technical personnel with some knowledge of the database schema.</li>
-
-                                                                <li class="list-group-item">Any changes occurring in the database schema in the future must be reflected in the mappings, to ensure the correct operations of the generated services, and the services must be re-generated.</li>
-
-                                                            </ul>
-
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-
-                                                <div class="col-sm-8">
-
-
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Mapping Rules to Access Database from Domain Ontology</b></div>
-                                                        <div class="panel-body"><img src="images/rdb2ont.png" id="rdb2ontImageID" alt="" class="img-responsive center-block" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--  column ends -->
-                                            </div>
-                                            <!--  row ends -->
-
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep6tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Service I/O Descriptions</b></div>
-                                                        <div class="panel-body">
-                                                            <div class="list-group">
-                                                                <ul>
-                                                                    <li>Each service is defined using an input OWL class and an output OWL class.</li>
-                                                                    <li>Terminologies from the domain ontology are used for definitions.</li>
-                                                                    <li>Two SADI services are defined below:</li>
                                                                 </ul>
 
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">getDiagnosisIDByPatientID</h4>
-                                                                    <p class="list-group-item-text">
-                                                                        <b>Description:</b> Retrieves diagnosis id (hdgWID) based on the patient id (patWID).
-                                                                        <br>
-                                                                        <b>Input:</b> Patient
-                                                                        <br>
-                                                                        <b>Output:</b> has_diagnosis some diagnosis
+                                                                <hr>
 
-                                                                    </p>
-                                                                </a>
-                                                                <a href="#" class="list-group-item">
-                                                                    <h4 class="list-group-item-heading">getDiagnosisCodeByDiagnosisID</h4>
-                                                                    <p class="list-group-item-text"><b>Description:</b> Retreives diagnosis code (hdgCd) based on the diagnosis id (hdgWID).
 
-                                                                        <br>
-                                                                        <b>Input:</b> Diagnosis
-                                                                        <br>
-                                                                        <b>Output:</b> has_diagnosis_code some string
-                                                                    </p>
-                                                                </a>
+
+                                                                <dl class="dl-horizontal">
+
+                                                                    <dt>Npatient</dt>
+
+                                                                    <dd>Contains basic information about all patients.</dd>
+
+                                                                    <dt>NhrDiagnosis</dt>
+
+                                                                    <dd>Contains information about diagnosis.</dd>
+
+                                                                    <dt>NhrAbstract</dt>
+
+                                                                    <dd>Contains general abstract information. The records from NhrDiagnosis do not directly correspond to the records from Npatient , and access to the table NhrAbstract via foreign keys is required</dd>
+
+                                                                </dl>
+
+
+
+
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!--  column ends -->
+                                                    <!--  column ends -->
 
-                                                <div class="col-sm-8">
+                                                    <div class="col-sm-8">
 
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Defining Service I/O based on Domain Ontology Terminologies</b></div>
-                                                        <div class="panel-body"><img src="images/serviceIO.png" id="serviceioImageID" alt="" class="img-responsive center-block" />
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Relatoinal Dababase Tables</b></div>
+                                                            <div class="panel-body"><img src="images/rdb.png" id="rdbImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <!--  column ends -->
                                                 </div>
-                                                <!--  column ends -->
+                                                <!--  row ends -->
+
                                             </div>
-                                            <!--  row ends -->
+                                            <div class="tab-pane" id="overviewStep4tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Separate Ontologies for Domain & Service</b></div>
+                                                            <div class="panel-body">
 
 
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep7tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>How SQL-template Query is generated?</b></div>
-                                                        <div class="panel-body">
+                                                                <ul class="list-unstyled">
 
-                                                            <ul>
-                                                                <li>SQL-template query is created automatically.</li>
-                                                                <li>Generated based on the service I/O definition.</li>
-                                                                <li>The I/O definition is rewritten into SQL-template query</li>
-                                                                <li>Three inputs are processed by VampirePrime reasoner: I/O definitions, domain ontology, and the mapping rules.</li>
-                                                                <li>Incremental Query Rewriting (IQR) technique together with some auxiliary SQL-specific code is required.</li>
-                                                                <li>All inputs to the VampirePrime reasoner are translated into <a href='http://www.cs.miami.edu/~tptp/'>TPTP</a> formula.</li>
-                                                                <li>The generated query is necessary and sufficient to generate all possible outputs.</li>
-                                                            </ul>
+                                                                    <li>Domain Ontology
 
+                                                                        <ul>
+
+                                                                            <li>Provides a vocabulary for formalizing Semantic Querying of relational data.</li>
+
+                                                                            <li>Focused on a particular domain e.g. Hospital-Acquired Infection (HAI).</li>
+
+                                                                            <li>Domain experts (e.g. infection control practitioners) are familiar with the vocabulary.</li>
+
+                                                                        </ul>
+
+                                                                    </li>
+
+                                                                    <li>Service Ontology
+
+                                                                        <ul>
+
+                                                                            <li>A separate ontology where the domain expert can define the SADI Service I/O.</li>
+
+                                                                            <li>Uses concepts from the domain ontology and various OWL class constructs.</li>
+
+                                                                            <li>I/O classes define the shape of RDF graph.</li>
+
+                                                                        </ul>
+
+
+                                                                    </li>
+
+
+                                                                </ul>
+
+
+
+
+
+
+
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!--  column ends -->
+                                                    <!--  column ends -->
 
-                                                <div class="col-sm-8">
+                                                    <div class="col-sm-8">
 
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Generation of SQL-template Query</b></div>
-                                                        <div class="panel-body"><img src="images/SQLGeneration.png" id="sqlgenerationImageID" alt="" class="img-responsive center-block" />
+
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Domain Ontology and Service Ontology</b></div>
+                                                            <div class="panel-body"><img src="images/ontology.png" id="ontologyImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <!--  column ends -->
                                                 </div>
-                                                <!--  column ends -->
+                                                <!--  row ends -->
+
                                             </div>
-                                            <!--  row ends -->
+                                            <div class="tab-pane" id="overviewStep5tab">
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Semantic Mapping</b></div>
+                                                            <div class="panel-body">
 
 
-                                        </div>
-                                        <div class="tab-pane" id="overviewStep8tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Details of the Service Code</b></div>
-                                                        <div class="panel-body">
 
-                                                            <ul class="list-group">
+                                                                <ul class="list-group">
 
-                                                                <li class="list-group-item">The Generated Code block is assembled from:
+                                                                    <li class="list-group-item">The mapping is required to capture the underlying database design and provide an explicit semantic correspondence, using rules or some other axioms.</li>
+
+                                                                    <li class="list-group-item">Relevant parts of the schema are mapped to the domain ontology using PSOA rules</li>
+
+                                                                    <li class="list-group-item">Manually written perhaps by the technical personnel with some knowledge of the database schema.</li>
+
+                                                                    <li class="list-group-item">Any changes occurring in the database schema in the future must be reflected in the mappings, to ensure the correct operations of the generated services, and the services must be re-generated.</li>
+
+                                                                </ul>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+
+                                                    <div class="col-sm-8">
+
+
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Mapping Rules to Access Database from Domain Ontology</b></div>
+                                                            <div class="panel-body"><img src="images/rdb2ont.png" id="rdb2ontImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+                                                </div>
+                                                <!--  row ends -->
+
+                                            </div>
+                                            <div class="tab-pane" id="overviewStep6tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Service I/O Descriptions</b></div>
+                                                            <div class="panel-body">
+                                                                <div class="list-group">
                                                                     <ul>
-                                                                        <li> An input code block for retrieving the input data value from input RDF graphs and storing the values in local variables,
-                                                                        </li>
-                                                                        <li>
-                                                                            An executable SQL query obtained by substituting the formal parameters in the template with the corresponding variables, and
-                                                                        </li>
-                                                                        <li>
-                                                                            An output code block, consisting of query execution code and some code forming the output RDF graph from the SQL result sets, according to the output class descriptions.
-                                                                        </li>
+                                                                        <li>Each service is defined using an input OWL class and an output OWL class.</li>
+                                                                        <li>Terminologies from the domain ontology are used for definitions.</li>
+                                                                        <li>Two SADI services are defined below:</li>
                                                                     </ul>
 
-                                                                </li>
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">getDiagnosisIDByPatientID</h4>
+                                                                        <p class="list-group-item-text">
+                                                                            <b>Description:</b> Retrieves diagnosis id (hdgWID) based on the patient id (patWID).
+                                                                            <br>
+                                                                            <b>Input:</b> Patient
+                                                                            <br>
+                                                                            <b>Output:</b> has_diagnosis some diagnosis
 
-                                                                <li class="list-group-item">The skeleton of the generated service code is organized as a standard Maven Java Web Application.</li>
+                                                                        </p>
+                                                                    </a>
+                                                                    <a href="#" class="list-group-item">
+                                                                        <h4 class="list-group-item-heading">getDiagnosisCodeByDiagnosisID</h4>
+                                                                        <p class="list-group-item-text"><b>Description:</b> Retreives diagnosis code (hdgCd) based on the diagnosis id (hdgWID).
+
+                                                                            <br>
+                                                                            <b>Input:</b> Diagnosis
+                                                                            <br>
+                                                                            <b>Output:</b> has_diagnosis_code some string
+                                                                        </p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+
+                                                    <div class="col-sm-8">
+
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Defining Service I/O based on Domain Ontology Terminologies</b></div>
+                                                            <div class="panel-body"><img src="images/serviceIO.png" id="serviceioImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+                                                </div>
+                                                <!--  row ends -->
 
 
-                                                            </ul>
+                                            </div>
+                                            <div class="tab-pane" id="overviewStep7tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>How SQL-template Query is generated?</b></div>
+                                                            <div class="panel-body">
 
-                                                            <!--div class="row">
+                                                                <ul>
+                                                                    <li>SQL-template query is created automatically.</li>
+                                                                    <li>Generated based on the service I/O definition.</li>
+                                                                    <li>The I/O definition is rewritten into SQL-template query</li>
+                                                                    <li>Three inputs are processed by VampirePrime reasoner: I/O definitions, domain ontology, and the mapping rules.</li>
+                                                                    <li>Incremental Query Rewriting (IQR) technique together with some auxiliary SQL-specific code is required.</li>
+                                                                    <li>All inputs to the VampirePrime reasoner are translated into <a href='http://www.cs.miami.edu/~tptp/'>TPTP</a> formula.</li>
+                                                                    <li>The generated query is necessary and sufficient to generate all possible outputs.</li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+
+                                                    <div class="col-sm-8">
+
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Generation of SQL-template Query</b></div>
+                                                            <div class="panel-body"><img src="images/SQLGeneration.png" id="sqlgenerationImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--  column ends -->
+                                                </div>
+                                                <!--  row ends -->
+
+
+                                            </div>
+                                            <div class="tab-pane" id="overviewStep8tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Details of the Service Code</b></div>
+                                                            <div class="panel-body">
+
+                                                                <ul class="list-group">
+
+                                                                    <li class="list-group-item">The Generated Code block is assembled from:
+                                                                        <ul>
+                                                                            <li> An input code block for retrieving the input data value from input RDF graphs and storing the values in local variables,
+                                                                            </li>
+                                                                            <li>
+                                                                                An executable SQL query obtained by substituting the formal parameters in the template with the corresponding variables, and
+                                                                            </li>
+                                                                            <li>
+                                                                                An output code block, consisting of query execution code and some code forming the output RDF graph from the SQL result sets, according to the output class descriptions.
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+
+                                                                    <li class="list-group-item">The skeleton of the generated service code is organized as a standard Maven Java Web Application.</li>
+
+
+                                                                </ul>
+
+                                                                <!--div class="row">
                                                         <div class="col-sm-3">
 
                                                         </div>
@@ -563,245 +564,245 @@
 
 
 
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!--  column ends -->
+                                                    <!--  column ends -->
 
-                                                <div class="col-sm-8">
+                                                    <div class="col-sm-8">
 
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Complete SADI Service Code Generation</b></div>
-                                                        <div class="panel-body"><img src="images/codegeneration.png" id="codegenerationImageID" alt="" class="img-responsive center-block" />
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Complete SADI Service Code Generation</b></div>
+                                                            <div class="panel-body"><img src="images/codegeneration.png" id="codegenerationImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <!--  column ends -->
                                                 </div>
-                                                <!--  column ends -->
+                                                <!--  row ends -->
+
+
                                             </div>
-                                            <!--  row ends -->
 
 
-                                        </div>
+                                            <div class="tab-pane" id="overviewStep9tab">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Final Steps</b></div>
+                                                            <div class="panel-body">
 
+                                                                <ul class="list-group">
 
-                                        <div class="tab-pane" id="overviewStep9tab">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Final Steps</b></div>
-                                                        <div class="panel-body">
+                                                                    <li class="list-group-item">The SADI Semantc Web service code is:
+                                                                        <ul>
+                                                                            <li> compiled
+                                                                            </li>
+                                                                            <li>
+                                                                                packaged, and
+                                                                            </li>
+                                                                            <li>
+                                                                                deployed in a special SADI service registry.
+                                                                            </li>
+                                                                        </ul>
 
-                                                            <ul class="list-group">
+                                                                    </li>
 
-                                                                <li class="list-group-item">The SADI Semantc Web service code is:
-                                                                    <ul>
-                                                                        <li> compiled
-                                                                        </li>
-                                                                        <li>
-                                                                            packaged, and
-                                                                        </li>
-                                                                        <li>
-                                                                            deployed in a special SADI service registry.
-                                                                        </li>
-                                                                    </ul>
+                                                                    <li class="list-group-item">The deployed SADI services can now be invoked, composed, executed by the HYDRA/SHARE SPARQL engine. They are found based on the properties used in the I/O definitions.</li>
 
-                                                                </li>
+                                                                    <li class="list-group-item">The end user executes SPARQL query which contains the RDF input data.</li>
 
-                                                                <li class="list-group-item">The deployed SADI services can now be invoked, composed, executed by the HYDRA/SHARE SPARQL engine. They are found based on the properties used in the I/O definitions.</li>
+                                                                    <li class="list-group-item">The services fetch the data from the database tables. The SQL-template query is instantiated by substituting the formal parameters with specific input values each time the service is executed. The input values are retrieved from the input RDF data.</li>
 
-                                                                <li class="list-group-item">The end user executes SPARQL query which contains the RDF input data.</li>
+                                                                    <li class="list-group-item">Finally, the end user receives results from HYDRA/SHARE.</li>
 
-                                                                <li class="list-group-item">The services fetch the data from the database tables. The SQL-template query is instantiated by substituting the formal parameters with specific input values each time the service is executed. The input values are retrieved from the input RDF data.</li>
+                                                                </ul>
 
-                                                                <li class="list-group-item">Finally, the end user receives results from HYDRA/SHARE.</li>
+                                                                <div class="row">
+                                                                    <div class="col-sm-3">
 
-                                                            </ul>
-
-                                                            <div class="row">
-                                                                <div class="col-sm-3">
-
-                                                                </div>
-                                                                <div class="col-sm-6">
+                                                                    </div>
+                                                                    <div class="col-sm-6">
                                                                         <span class="input-group-btn">
                                                     <button class="btn btn-lg btn-success" id="go2DemoBtn" type="button">Go to Demo</button>
                                                 </span>
+                                                                    </div>
                                                                 </div>
+
+
+
                                                             </div>
-
-
-
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!--  column ends -->
+                                                    <!--  column ends -->
 
-                                                <div class="col-sm-8">
+                                                    <div class="col-sm-8">
 
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading"><b>Deploying-Indexing in the SADI Service Registry and Quering Using SPARQL</b></div>
-                                                        <div class="panel-body"><img src="images/deployquery.png" id="deployqueryImageID" alt="" class="img-responsive center-block" />
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading"><b>Deploying-Indexing in the SADI Service Registry and Quering Using SPARQL</b></div>
+                                                            <div class="panel-body"><img src="images/deployquery.png" id="deployqueryImageID" alt="" class="img-responsive center-block" />
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <!--  column ends -->
                                                 </div>
-                                                <!--  column ends -->
+                                                <!--  row ends -->
+
+
                                             </div>
-                                            <!--  row ends -->
 
 
+                                            <!-- separate previous and next button -->
+                                            <div style="float:right">
+                                                <input type='button' class='btn button-next' name='next' value='Next' />
+                                            </div>
+                                            <div style="float:left">
+                                                <input type='button' class='btn button-previous' name='previous' value='Previous' />
+                                            </div>
+                                            <!-- separate previous and next button ends-->
                                         </div>
+                                    </div>
 
 
-                                        <!-- separate previous and next button -->
-                                        <div style="float:right">
-                                            <input type='button' class='btn button-next' name='next' value='Next' />
+
+
+
+
+
+
+
+
+                                </div>
+                                <!--end col-sm-12 -->
+
+                            </div>
+                            <!--row ends-->
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="tab-pane" id="tohrdbtab">
+
+                            <div class="row">
+
+
+                                <div class="col-sm-2">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">An Extract of The Ottawa Hospital Data Warehouse</div>
+                                        <div class="panel-body"><img src="images/TOHDWSchemaImage.png" id="TOWDASchemaImageID" alt="" class="img-responsive center-block" />
                                         </div>
-                                        <div style="float:left">
-                                            <input type='button' class='btn button-previous' name='previous' value='Previous' />
-                                        </div>
-                                        <!-- separate previous and next button ends-->
                                     </div>
                                 </div>
 
-
-
-
-
-
-
-
-
-
                             </div>
-                            <!--end col-sm-12 -->
-
-                        </div>
-                        <!--row ends-->
+                            <div class="row">
 
 
-
-
-                    </div>
-
-
-
-
-
-
-
-                    <div class="tab-pane" id="tohrdbtab">
-
-                        <div class="row">
-
-
-                            <div class="col-sm-2">
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">An Extract of The Ottawa Hospital Data Warehouse</div>
-                                    <div class="panel-body"><img src="images/TOHDWSchemaImage.png" id="TOWDASchemaImageID" alt="" class="img-responsive center-block" />
-                                    </div>
+                                <div class="col-sm-4">
                                 </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-
-                            <div class="col-sm-4">
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-lg btn-success" id="go2OntlolgiesTabBtn" type="button">Next Step: Load Domain and Service Ontologies</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <!-- end 	tab-pane 1 -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="tab-pane" id="ontologiestab">
-                        <div class="row">
-                            <div class="col-sm-12">
 
                                 <div class="col-sm-6">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-lg btn-success" id="go2OntlolgiesTabBtn" type="button">Next Step: Load Domain and Service Ontologies</button>
+                                    </div>
+                                </div>
 
-                                    <p><b>Domain Ontology URI</b></p>
-                                    <div class="input-group">
-                                        <input input type="text" class="form-control" id="domainOntologyURI" placeholder="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl" value="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl" aria-describedby="sizing-addon3">
+                            </div>
+
+
+                        </div>
+                        <!-- end 	tab-pane 1 -->
+
+
+
+
+
+
+
+
+
+
+                        <div class="tab-pane" id="ontologiestab">
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="col-sm-6">
+
+                                        <p><b>Domain Ontology URI</b></p>
+                                        <div class="input-group">
+                                            <input input type="text" class="form-control" id="domainOntologyURI" placeholder="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl" value="http://cbakerlab.unbsj.ca:8080/haitohdemo/HAI.owl" aria-describedby="sizing-addon3">
                                             <span class="input-group-btn">
                                                     <button class="btn btn-success" id="loadDomOntBtn" type="button">Load</button>
                                                 </span>
-                                    </div>
-                                    <!-- /input-group -->
+                                        </div>
+                                        <!-- /input-group -->
 
-                                    <!--br/>
+                                        <!--br/>
                             <input class="btn btn-success" id="loadDomOntBtn" type="button" value="Load"/-->
 
-                                    <br/>
-                                    <br/>
+                                        <br/>
+                                        <br/>
                                         <textarea class="form-control
                                     col-sm-4" id="domainOntologyContent" rows="20"></textarea>
-                                </div>
+                                    </div>
 
-                                <div class="col-sm-6">
+                                    <div class="col-sm-6">
 
-                                    <p><b>Service Ontology URI</b></p>
-                                    <div class="input-group">
-                                        <input input type="text" class="form-control" id="serviceOntologyURI" placeholder="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl" value="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl" aria-describedby="sizing-addon3">
+                                        <p><b>Service Ontology URI</b></p>
+                                        <div class="input-group">
+                                            <input input type="text" class="form-control" id="serviceOntologyURI" placeholder="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl" value="http://cbakerlab.unbsj.ca:8080/haitohdemo/haitoh-sadi-service-ontology.owl" aria-describedby="sizing-addon3">
                                             <span class="input-group-btn">
                                             <button class="btn btn-success" id="loadServOntBtn" type="button">Load</button>
                                         </span>
-                                    </div>
-                                    <!-- /input-group -->
+                                        </div>
+                                        <!-- /input-group -->
 
-                                    <!--br/>
+                                        <!--br/>
                             <input class="btn btn-success" id="loadServOntBtn" type="button" value="Load"/-->
 
 
-                                    <br/>
-                                    <br/>
+                                        <br/>
+                                        <br/>
                                         <textarea class="form-control
                                     col-sm-4" id="serviceOntologyContent" rows="20"></textarea>
-                                    <br/>
+                                        <br/>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!-- row ends -->
+
+                            <div class="row">
+
+                                <div class="col-sm-4">
+
                                 </div>
 
-
-                            </div>
-                        </div>
-                        <!-- row ends -->
-
-                        <div class="row">
-
-                            <div class="col-sm-4">
-
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    &nbsp;
-                                    <div class="control-group input-group-btn">
-                                        <button class="btn btn-lg btn-success" id="go2mappingRulesTabBtn" type="button">Next Step: Load Ontology -> RDB Mapping Rules</button>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        &nbsp;
+                                        <div class="control-group input-group-btn">
+                                            <button class="btn btn-lg btn-success" id="go2mappingRulesTabBtn" type="button">Next Step: Load Ontology -> RDB Mapping Rules</button>
+                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
-
-
+                            <!-- row ends -->
                         </div>
-                        <!-- row ends -->
-                    </div>
-                    <!-- end 	tab-pane 1 -->
+                        <!-- end 	tab-pane 1 -->
 
 
 
@@ -812,50 +813,50 @@
 
 
 
-                    <div class="tab-pane" id="mappingrulestab">
-                        <div class="row">
+                        <div class="tab-pane" id="mappingrulestab">
+                            <div class="row">
 
 
-                            <div class="col-sm-12">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success" id="loadPSOAMappingRulesBtn" type="button">Load Mapping Rules</button>
-                                    <br/>
-                                    <br/>
-                                    <p><b>Mapping of the Domain Ontology and the Relational Database</b></p>
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="loadPSOAMappingRulesBtn" type="button">Load Mapping Rules</button>
+                                        <br/>
+                                        <br/>
+                                        <p><b>Mapping of the Domain Ontology and the Relational Database</b></p>
 
-                                    <textarea class="form-control col-sm-6" id="PSOAMappingRulesContentID" rows="20"></textarea>
-                                </div>
-                                <!--div class="col-sm-4">
+                                        <textarea class="form-control col-sm-6" id="PSOAMappingRulesContentID" rows="20"></textarea>
+                                    </div>
+                                    <!--div class="col-sm-4">
                             <br/>
                             <br/>
                             <button class="btn btn-success" id="loadSourceCodeBtn" type="button">Load Generated Source Code</button>
 
                         </div-->
-                            </div>
-
-                        </div>
-                        <!-- row ends -->
-
-                        <div class="row">
-
-                            <div class="col-sm-4">
+                                </div>
 
                             </div>
+                            <!-- row ends -->
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    &nbsp;
-                                    <div class="control-group input-group-btn">
-                                        <button class="btn btn-lg btn-success" id="go2SourceCodeBtn" type="button">Next Step:Generate Source Code for SADI Service</button>
+                            <div class="row">
+
+                                <div class="col-sm-4">
+
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        &nbsp;
+                                        <div class="control-group input-group-btn">
+                                            <button class="btn btn-lg btn-success" id="go2SourceCodeBtn" type="button">Next Step:Generate Source Code for SADI Service</button>
+                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
-
-
+                            <!-- row ends -->
                         </div>
-                        <!-- row ends -->
-                    </div>
-                    <!-- end 	tab-pane 1 -->
+                        <!-- end 	tab-pane 1 -->
 
 
 
@@ -866,221 +867,269 @@
 
 
 
-                    <div class="tab-pane" id="generatedsourcetab">
+                        <div class="tab-pane" id="generatedsourcetab">
 
-                        <div class="row">
+                            <div class="row">
 
-                            <div class="col-sm-4">
+                                <div class="col-sm-4">
 
-                                <div class="dropdown" id="serviceDropDownID">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Service to Generate
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">getDiagnosisIDByPatientID</a></li>
-                                        <li><a href="#">getDiagnosisCodeByDiagnosisID</a></li>
-                                    </ul>
+                                    <div class="dropdown" id="serviceDropDownID">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Service to Generate
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">getDiagnosisIDByPatientID</a></li>
+                                            <li><a href="#">getDiagnosisCodeByDiagnosisID</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <!--div class="panel panel-default">
+                                <div class="col-sm-8">
+                                    <!--div class="panel panel-default">
                                 <div class="panel-heading">An Extract of The Ottawa Hospital Data Warehouse</div>
                                 <div class="panel-body"-->
 
-                                <form class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="ServiceNameID">Service Name:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="ServiceNameID" placeholder="Name of the SADI Service">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="ServiceClassID">Service Class:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="ServiceClassID" placeholder="Name of the Service Class in full">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="InputClassID">Input Class:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="InputClassID" placeholder="URI of the input class from service ontology">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="OutputClassID">Output Class:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="OutputClassID" placeholder="URI of the output class from service ontology">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="DescriptionID">Description:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="DescriptionID" placeholder="Description of the service">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="EmailID">Email:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="EmailID" placeholder="Contact email of the author">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" id="generateSourceCodeBtn" class="btn btn-default">Generate Code</button>
-                                            <div id="loadingCodeGIF">
-                                                <p><img src="images/ajax-loader.gif" /> Please Wait...</p>
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="ServiceNameID">Service Name:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="ServiceNameID" placeholder="Name of the SADI Service">
                                             </div>
-                                            <button type="submit" id="displaySourceCodeBtn" class="btn btn-default">Display Code</button>
-                                            <!--button type="submit" id="registerServiceBtn" class="btn btn-default">Register Service</button-->
                                         </div>
-                                    </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="ServiceClassID">Service Class:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="ServiceClassID" placeholder="Name of the Service Class in full">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="InputClassID">Input Class:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="InputClassID" placeholder="URI of the input class from service ontology">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="OutputClassID">Output Class:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="OutputClassID" placeholder="URI of the output class from service ontology">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="DescriptionID">Description:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="DescriptionID" placeholder="Description of the service">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="EmailID">Email:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="EmailID" placeholder="Contact email of the author">
+                                            </div>
+                                        </div>
 
 
-                                </form>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" id="generateSourceCodeBtn" class="btn btn-default">Generate Code</button>
+                                                <div id="loadingCodeGIF">
+                                                    <p><img src="images/ajax-loader.gif" /> Please Wait...</p>
+                                                </div>
+                                                <button type="submit" id="displaySourceCodeBtn" class="btn btn-default">Display Code</button>
+                                                <!--button type="submit" id="registerServiceBtn" class="btn btn-default">Register Service</button-->
+                                            </div>
+                                        </div>
+
+
+                                    </form>
 
 
 
 
+
+
+                                </div>
 
 
                             </div>
+                            <!--row ends-->
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="sourceCodeDisplayTabsHeadingID">
+                                        <h4><p>Select a Tab to View SADI Service Code</p></h4>
+                                    </div>
+                                    <div id="sourceCodeDisplayTabsID">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="active"><a href="#serviceClassTab" data-toggle="tab">Service Class</a></li>
+                                            <li><a href="#mysqlConnectionTab" data-toggle="tab">DB Connection Class</a></li>
+                                            <li><a href="#webXMLTab" data-toggle="tab">web.xml</a></li>
+                                            <li><a href="#indexJSPTab" data-toggle="tab">index.jsp</a></li>
+                                            <li><a href="#pomXMLTab" data-toggle="tab">pom.xml</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="serviceClassTab">
+                                            <textarea class="form-control col-sm-8" id="serviceClassCodeTextareaID" rows="12"></textarea>
+                                        </div>
+                                        <div class="tab-pane fade" id="mysqlConnectionTab">
+                                            <textarea class="form-control col-sm-8" id="mysqlConnCodeTextareaID" rows="12"></textarea>
+                                        </div>
+                                        <div class="tab-pane fade" id="webXMLTab">
+                                            <textarea class="form-control col-sm-8" id="webXMLConfTextareaID" rows="12"></textarea>
+                                        </div>
+                                        <div class="tab-pane fade" id="indexJSPTab">
+                                            <textarea class="form-control col-sm-8" id="indexJSPCodeTextareaID" rows="12"></textarea>
+                                        </div>
+                                        <div class="tab-pane fade" id="pomXMLTab">
+                                            <textarea class="form-control col-sm-8" id="pomXMLConfTextareaID" rows="12"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end row-->
 
 
                         </div>
-                        <!--row ends-->
 
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div id="sourceCodeDisplayTabsHeadingID">
-                                    <h4><p>Select a Tab to View SADI Service Code</p></h4>
+
+
+
+                        <div class="tab-pane" id="registerServicestab">
+
+                            <div class="row">
+
+                                <div class="col-sm-3">
+
+                                    <div class="dropdown" id="serviceToRegisterDropDownID">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a Service to Register
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">getDiagnosisIDByPatientID</a></li>
+                                            <li><a href="#">getDiagnosisCodeByDiagnosisID</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div id="sourceCodeDisplayTabsID">
-                                    <ul class="nav nav-tabs" data-tabs="tabs">
-                                        <li class="active"><a href="#serviceClassTab" data-toggle="tab">Service Class</a></li>
-                                        <li><a href="#mysqlConnectionTab" data-toggle="tab">DB Connection Class</a></li>
-                                        <li><a href="#webXMLTab" data-toggle="tab">web.xml</a></li>
-                                        <li><a href="#indexJSPTab" data-toggle="tab">index.jsp</a></li>
-                                        <li><a href="#pomXMLTab" data-toggle="tab">pom.xml</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade in active" id="serviceClassTab">
-                                        <textarea class="form-control col-sm-8" id="serviceClassCodeTextareaID" rows="12"></textarea>
-                                    </div>
-                                    <div class="tab-pane fade" id="mysqlConnectionTab">
-                                        <textarea class="form-control col-sm-8" id="mysqlConnCodeTextareaID" rows="12"></textarea>
-                                    </div>
-                                    <div class="tab-pane fade" id="webXMLTab">
-                                        <textarea class="form-control col-sm-8" id="webXMLConfTextareaID" rows="12"></textarea>
-                                    </div>
-                                    <div class="tab-pane fade" id="indexJSPTab">
-                                        <textarea class="form-control col-sm-8" id="indexJSPCodeTextareaID" rows="12"></textarea>
-                                    </div>
-                                    <div class="tab-pane fade" id="pomXMLTab">
-                                        <textarea class="form-control col-sm-8" id="pomXMLConfTextareaID" rows="12"></textarea>
-                                    </div>
+
+                                <div class="col-sm-9">
+
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="deployedServiceNameTxtFieldID">Service URL:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="deployedServiceNameTxtFieldID" placeholder="Select a SADI Service URI from the Menu">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" id="registerServiceBtn" class="btn btn-default">Register</button>
+                                                <!--a id="go2ServiceRegistryBtn" class="btn btn-default" href="http://cbakerlab.unbsj.ca:8080/sadi-registry-0.1.0-valet-sadi/services/" target="_blank">Remove Services from Registry</a-->
+                                                <button type="submit" id="removeServicesBtn" class="btn btn-default">Clear Registry</button>
+                                                <!--button type="submit" id="registerBtn" class="btn btn-default">Register</button-->
+                                                <div id="loadingRegisterGIF">
+                                                    <p><img src="images/ajax-loader.gif" />Registering Service...</p>
+                                                </div>
+
+                                                <div id="registrationSuccessMsg">
+                                                    <p>Successfully registered</p>
+                                                </div>
+                                                <!--button type="text" id="go2ServiceRegistryBtn" class="btn btn-default">Open Service Registry in a new Window</button-->
+
+                                                <!--button type="submit" id="diaplaySourceCodeBtn" class="btn btn-default">Display Code</button-->
+                                                <!--button type="submit" id="registerServiceBtn" class="btn btn-default">Register Servi ce</button-->
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
+                            <!--row ends-->
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!--h3>SADI Service Registry Live Snapshot</h3-->
+                                    <p id="registeredServicesWindowID">
+
+
+                                    </p>
+                                    <!--iframe id="mirrorRegistryiframeID" src="http://cbakerlab.unbsj.ca:8080/sadi-registry-0.1.0-valet-sadi/" width="1140" height="600"></iframe-->
+                                </div>
+
+                            </div>
+                            <!--row ends-->
+
+
                         </div>
-                        <!--end row-->
 
 
-                    </div>
+                        <div class="tab-pane" id="queryServicestab">
+
+                            <div class="row">
+
+                                <div class="col-sm-8">
+                                    <h3>SPARQL Query on SADI Services</h3>
+                                    <div>
+                                        <!--ul class="nav nav-tabs" id="tabs">
+                                            <li class="active"><a href="#tab1" data-toggle="tab">PSOA Rulebase in RuleML/XML Syntax</a></li>
+                                            <li><a href="#tab2" data-toggle="tab">PSOA Rulebase in Presentation Syntax</a></li>
+                                        </ul-->
+                                        <div>
+                                            <div class="active tab-pane" id="tab1">
+                                                <textarea class="form-control" id="textareaSPARQLQueryID" rows="10"></textarea>
+                                                <br/>
+                                                <input class="btn btn-success" id="submitQueryBtnID" type="button" value="Submit Query" />
+                                                <input class="btn btn-info" id="SampleQueryBtnID" type="button" value="Sample Query" />
+                                                <input class="btn btn-warning" id="resetQueryBtnID" type="button" value="Reset" />
+
+                                                <!--div class="alert alert-danger alert-block fade in" id="errorAlert">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+                                                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                                                </div-->
+
+                                            </div>
+                                            <!-- end tab-pane -->
 
 
-
-
-
-                    <div class="tab-pane" id="registerServicestab">
-
-                        <div class="row">
-
-                            <div class="col-sm-3">
-
-                                <div class="dropdown" id="serviceToRegisterDropDownID">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a Service to Register
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">getDiagnosisIDByPatientID</a></li>
-                                        <li><a href="#">getDiagnosisCodeByDiagnosisID</a></li>
-                                    </ul>
+                                            <!-- end tab-pane -->
+                                        </div>
+                                        <!-- end tab-content -->
+                                    </div>
+                                    <!-- end tabbable -->
                                 </div>
+                                <!-- end col-sm-6 -->
+                                <!--row ends-->
+
+                                <div class="row">
+
+
+                                </div>
+                                <!--row ends-->
+
+
                             </div>
 
-                            <div class="col-sm-9">
-
-                                <form class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="deployedServiceNameTxtFieldID">Service URL:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="deployedServiceNameTxtFieldID" placeholder="Select a SADI Service URI from the Menu">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" id="registerServiceBtn" class="btn btn-default">Register</button>
-                                            <!--a id="go2ServiceRegistryBtn" class="btn btn-default" href="http://cbakerlab.unbsj.ca:8080/sadi-registry-0.1.0-valet-sadi/services/" target="_blank">Remove Services from Registry</a-->
-                                            <button type="submit" id="removeServicesBtn" class="btn btn-default">Clear Registry</button>
-                                            <!--button type="submit" id="registerBtn" class="btn btn-default">Register</button-->
-                                            <div id="loadingRegisterGIF">
-                                                <p><img src="images/ajax-loader.gif" />Registering Service...</p>
-                                            </div>
-
-                                            <div id="registrationSuccessMsg">
-                                                <p>Successfully registered</p>
-                                            </div>
-                                            <!--button type="text" id="go2ServiceRegistryBtn" class="btn btn-default">Open Service Registry in a new Window</button-->
-
-                                            <!--button type="submit" id="diaplaySourceCodeBtn" class="btn btn-default">Display Code</button-->
-                                            <!--button type="submit" id="registerServiceBtn" class="btn btn-default">Register Servi ce</button-->
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div><!--row ends-->
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <!--h3>SADI Service Registry Live Snapshot</h3-->
-                                <p id="registeredServicesWindowID">
-
-
-                                </p>
-                                <!--iframe id="mirrorRegistryiframeID" src="http://cbakerlab.unbsj.ca:8080/sadi-registry-0.1.0-valet-sadi/" width="1140" height="600"></iframe-->
-                            </div>
-
-                        </div><!--row ends-->
-
-
-                    </div>
 
 
 
-
-
-                    <!-- end tab-pane -->
-                </div>
-                <!-- end
+                            <!-- end tab-pane -->
+                        </div>
+                        <!-- end
                                                                 tab-content -->
+                    </div>
+                    <!-- end tabbable -->
+                </div>
+                <!-- end 														col-sm-6 -->
+
             </div>
-            <!-- end tabbable -->
+            <!-- end col-sm-6 -->
+
+
+
+
         </div>
-        <!-- end 														col-sm-6 -->
-
-    </div>
-    <!-- end col-sm-6 -->
+        <!--hr-->
 
 
 
-
-</div>
-<!--hr-->
-
-
-
-<!--footer>     <div class="container">         <div class="row">
+        <!--footer>     <div class="container">         <div class="row">
 <div class="col-sm-2">                 <h6>Copyright &copy; 2013
 {name}</h6> 											</div>
 
@@ -1107,36 +1156,39 @@ Plus</a></li>     </ul> </div>
 glyphicon-heart"></span> by Brad</h6> </div> 	        </div>
 </div> 	</footer-->
 
-<!-- All Javascript at the bottom of the page for faster page loading -->
+        <!-- All Javascript at the bottom of the page for faster page loading -->
 
-<!-- First try for the online version of jQuery-->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!-- First try for the online version of jQuery-->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-<!-- If no online access, fallback to our hardcoded version of jQuery -->
-<script>
-    window.jQuery || document.write('<script src = "includes/js/jquery-1.12.1.min.js"/>');
-</script>
+        <!-- If no online access, fallback to our hardcoded version of jQuery -->
+        <script>
+            window.jQuery || document.write('<script src = "includes/js/jquery-1.12.1.min.js"/>');
+        </script>
 
-<!-- Bootstrap JS -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="includes/js/jquery-ui.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="includes/js/jquery-ui.js"></script>
 
-<!-- Bootstrap Wizard -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.js"></script>
+        <!-- Bootstrap Wizard -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.js"></script>
 
-<!-- JSZip JS for compressing a directory -->
-<script src="includes/js/jszip.js"></script>
-<!-- FileSaver.js for saving a file -->
-<script src="includes/js/FileSaver.js"></script>
+        <!-- JSZip JS for compressing a directory -->
+        <script src="includes/js/jszip.js"></script>
+        <!-- FileSaver.js for saving a file -->
+        <script src="includes/js/FileSaver.js"></script>
 
-<script src="includes/js/jquery.bootstrap.wizard.min.js"></script>
+        <script src="includes/js/jquery.bootstrap.wizard.min.js"></script>
 
 
-<script src="includes/js/ontologyLoader.js"></script>
+        <script src="includes/js/ontologyLoader.js"></script>
 
-<script src="includes/js/data/psoamappingrule.js"></script>
+        <script src="includes/js/data/psoamappingrule.js"></script>
+
+
+        <script src="includes/js/data/query1.js"></script>
 
 
 
