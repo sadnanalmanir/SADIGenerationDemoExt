@@ -29,7 +29,7 @@ public class Config extends ca.wilkinsonlab.sadi.Config
 
 	private static final Config theInstance = new Config(DEFAULT_PROPERTIES_FILENAME, LOCAL_PROPERTIES_FILENAME);
 
-	private static CacheManager theCacheManager;
+	//private static CacheManager theCacheManager;
 	
 	public static Config getConfiguration()
 	{
@@ -45,16 +45,17 @@ public class Config extends ca.wilkinsonlab.sadi.Config
 		 * and if it can't find that, it will print a warning and use ehcache-failsafe.xml (which
 		 * is included with the ehcache jar).
 		 */
-		theCacheManager = new CacheManager(Config.class.getResource(CACHE_CONFIG_FILENAME));		
+		//theCacheManager = new CacheManager(Config.class.getResource(CACHE_CONFIG_FILENAME));
 
 		initJenaLocationMapper();
 	}
 
-	public static CacheManager getCacheManager() 
+	/*
+	public static CacheManager getCacheManager()
 	{
 		return theCacheManager;
 	}
-	
+	*/
 	/**
 	 * Load URL prefix mappings into Jena, for cases when the query engine should not 
 	 * retrieve a document from the real URL.
@@ -95,17 +96,18 @@ public class Config extends ca.wilkinsonlab.sadi.Config
 		}
 		
 	}
-	
+
+	/*
 	@Override
 	protected void finalize() throws Throwable 
 	{
 		try {
-			/* not strictly necessary, but best practice */
+			// not strictly necessary, but best practice
 			if(theCacheManager != null)
 				theCacheManager.shutdown();
 		} finally {
 			super.finalize();
 		}
 	}
-	
+	*/
 }

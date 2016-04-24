@@ -20,8 +20,8 @@ var Services = "services";
 var RemoveServices = "removeall";
 var NumberOfRegisteredServices = "numsofervices";
 
-var SPARQLQueryPath = 'sparqlquery';
-var SharePath = 'share';
+var SPARQLQueryPath = 'queryengine';
+var SharePath = 'sparqlonshare';
 
 
 var loadedDomainOntology = "";
@@ -892,6 +892,9 @@ $(document).ready(function () {
             executeSPARQLQueryonSHARE(encode(SPARQLqueryContent), function (result) {
                 //loadedServiceOntology = result;
                 console.log('Response from SHARE: '+ result)
+                $('#resultsSPARQLWindowID').html("");
+                $('#resultsSPARQLWindowID').html("<br/><h2>Results</h2></br>");
+                $('#resultsSPARQLWindowID').append(result);
                 //$("#serviceOntologyContent").val(loadedServiceOntology);
                 //$("#serviceOntologyContent").show();
                 //$("#tabs")

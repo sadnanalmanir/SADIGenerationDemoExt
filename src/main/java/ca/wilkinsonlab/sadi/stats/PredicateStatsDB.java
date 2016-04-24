@@ -117,7 +117,7 @@ public class PredicateStatsDB
 				       .timeToLiveSeconds(600)
 				       .timeToIdleSeconds(300));
 
-		Config.getCacheManager().addCache(statsCache);
+		//Config.getCacheManager().addCache(statsCache);
 	}
 	
 	public int getNumSamples() throws IOException 

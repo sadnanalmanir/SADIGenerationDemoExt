@@ -170,13 +170,13 @@ public class SHAREKnowledgeBase
 		deadServices = Collections.synchronizedSet(new HashSet<String>());
 		for (Object serviceUri: config.getList("share.deadService"))
 			deadServices.add((String)serviceUri);
-		
+		/* temporarily disabled for the error  'could not acquire a free port number'
 		try {
 			this.statsDB = new PredicateStatsDB(config.subset(PredicateStatsDB.ROOT_CONFIG_KEY));
 		} catch(IOException e) {
 			log.error("unable to initialize predicate stats db", e);
 		}
-
+		*/
 		Configuration kbConfig = config.subset(ROOT_CONFIG_KEY);
 		dynamicInputInstanceClassification = kbConfig.getBoolean(DYNAMIC_INPUT_CLASSIFICATION_CONFIG_KEY, false);
 		setUseAdaptiveQueryPlanning(kbConfig.getBoolean(USE_ADAPTIVE_QUERY_PLANNING_CONFIG_KEY, false));

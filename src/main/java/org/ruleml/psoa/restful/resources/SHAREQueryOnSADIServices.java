@@ -1,6 +1,8 @@
 package org.ruleml.psoa.restful.resources;
 
 import ca.wilkinsonlab.sadi.share.SHAREQueryClient;
+import ca.wilkinsonlab.cardioshare.CardioSHAREQueryClient;
+
 import com.hp.hpl.jena.ontology.OntDocumentManager;
 import org.apache.commons.lang.time.DurationFormatUtils;
 import org.apache.commons.lang.time.StopWatch;
@@ -17,7 +19,7 @@ import java.util.Map;
 /**
  * Created by sadnana on 23/04/16.
  */
-@Path("/sparqlquery")
+@Path("/queryengine")
 public class SHAREQueryOnSADIServices {
 
     private static final Logger log = Logger.getLogger(SHAREQueryOnSADIServices.class);
@@ -35,7 +37,7 @@ public class SHAREQueryOnSADIServices {
 
 
 
-    @Path("/share")
+    @Path("/sparqlonshare")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
@@ -264,13 +266,16 @@ public class SHAREQueryOnSADIServices {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        SHAREQueryClient client = new SHAREQueryClient();
+        //SHAREQueryClient client = new SHAREQueryClient();
+        SHAREQueryClient client = new CardioSHAREQueryClient();
+        //SHAREQueryClient client = new CardioSHAREQueryClient();
         List<Map<String, String>> results = client.synchronousQuery(query);
 
         stopWatch.stop();
 
         StringBuffer buf = new StringBuffer("query finished in ");
         buf.append(DurationFormatUtils.formatDurationHMS(stopWatch.getTime()));
+        buf.append("\n");
         if (results.isEmpty()) {
             buf.append("\nno results");
         } else {
