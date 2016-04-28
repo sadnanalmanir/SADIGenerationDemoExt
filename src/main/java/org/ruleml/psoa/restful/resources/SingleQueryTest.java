@@ -252,6 +252,7 @@ public class SingleQueryTest {
         stopWatch.start();
 
         SHAREQueryClient client = new SHAREQueryClient();
+
         List<Map<String, String>> results = client.synchronousQuery(query);
 
         stopWatch.stop();
